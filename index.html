@@ -3,219 +3,127 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Get Off Auto — a beginner's camera guide</title>
-<meta name="description" content="A friendly, hands-on guide to digital and film cameras: modes, aperture, shutter speed, ISO, lenses and taking better photos.">
+<title>Get Off Auto: a complete beginner's camera course</title>
+<meta name="description" content="A friendly, hands-on course for digital and film cameras: modes, exposure, lenses, focus, light, composition, editing, tools and quizzes.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#ECEEE9; --surface:#F8F9F6; --ink:#1F262B; --muted:#56616A; --line:#C8CEC7;
-  --amber:#C98408; --amber-soft:#F6E3B8; --blue:#256685;
-  --lcd:#1D2226; --lcd-ink:#F0B640; --lcd-dim:#7D6A3E;
-  --display:"Archivo", "Arial Narrow", system-ui, sans-serif;
-  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color-scheme:light dark;
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px);
-  padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#191D20; --surface:#22282C; --ink:#E7EAE5; --muted:#A0AAB0; --line:#363E43;
-    --amber:#F0AE35; --amber-soft:#4A3A18; --blue:#73B6D6;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#191D20; --surface:#22282C; --ink:#E7EAE5; --muted:#A0AAB0; --line:#363E43;
-  --amber:#F0AE35; --amber-soft:#4A3A18; --blue:#73B6D6;
-}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-text-size-adjust:100%}
-img,svg{max-width:100%}
-a{color:var(--blue)}
-:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
-.wrap{max-width:780px;margin:0 auto;padding:0 20px}
-
-/* Header */
-header{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
-.brand{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px}
-.brand a{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-.theme-btn{background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:.85rem;padding:4px 10px;border-radius:999px;cursor:pointer}
-nav{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-nav::-webkit-scrollbar{display:none}
-nav ul{list-style:none;margin:0;padding:6px 0 0;display:flex;gap:4px;white-space:nowrap}
-nav button{background:none;border:none;font:inherit;font-size:.95rem;color:var(--muted);padding:10px 10px 12px;cursor:pointer;border-bottom:3px solid transparent}
-nav button[aria-current="page"]{color:var(--ink);font-weight:700;border-bottom-color:var(--amber)}
-
-/* Type */
-h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
-h1{font-size:clamp(2.6rem,9vw,4.6rem);font-stretch:125%;font-weight:800;letter-spacing:-.025em;margin:40px 0 16px}
-h2{font-size:clamp(1.7rem,5vw,2.3rem);font-stretch:112%;font-weight:750;letter-spacing:-.015em;margin:44px 0 10px}
-h3{font-size:1.2rem;font-stretch:105%;font-weight:700;margin:28px 0 6px}
-p{margin:0 0 14px;max-width:66ch}
-.lede{font-size:1.2rem;color:var(--muted);max-width:56ch}
-.small{font-size:.9rem;color:var(--muted)}
-strong{font-weight:700}
-section[hidden]{display:none}
-main{padding-bottom:60px}
-
-/* Generic blocks */
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
-.def{border-left:4px solid var(--amber);padding:2px 0 2px 16px;margin:22px 0}
-.def h3{margin-top:0}
-.grid2{display:grid;gap:14px;grid-template-columns:1fr}
-@media (min-width:640px){.grid2{grid-template-columns:1fr 1fr}}
-.next{display:inline-block;margin-top:34px;font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.1rem;background:var(--ink);color:var(--paper);border:none;padding:12px 18px;border-radius:10px;cursor:pointer}
-.tip{background:var(--amber-soft);border-radius:10px;padding:12px 16px;margin:16px 0}
-.tip p:last-child{margin-bottom:0}
-dl.kv{margin:0}
-dl.kv dt{font-weight:700;margin-top:10px}
-dl.kv dd{margin:2px 0 0}
-
-/* Home paths */
-.paths{display:grid;gap:10px;margin:26px 0}
-.paths button{display:block;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;color:var(--ink);cursor:pointer}
-.paths b{display:block;font-family:var(--display);font-stretch:112%;font-size:1.1rem}
-.paths span{color:var(--muted);font-size:.95rem}
-
-/* Iris */
-.iris-wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-.iris-wrap svg{width:130px;height:130px;flex:none}
-.iris-ctl{flex:1;min-width:200px}
-input[type=range]{width:100%;accent-color:var(--amber);height:32px}
-
-/* LCD readout */
-.lcd{background:var(--lcd);color:var(--lcd-ink);border-radius:12px;padding:12px 14px;font-family:var(--display);font-stretch:100%;font-variant-numeric:tabular-nums}
-.lcd-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
-.lcd .mode{font-weight:800;font-size:1.5rem;font-stretch:125%;min-width:2.4em}
-.lcd .val{font-size:1.35rem;font-weight:650}
-.lcd .val small{font-size:.75rem;color:var(--lcd-dim);font-weight:500;margin-right:3px}
-.lcd .val.cam{opacity:.75}
-.meter{margin-top:8px;position:relative;height:26px}
-.meter-scale{display:flex;justify-content:space-between;font-size:.72rem;color:var(--lcd-dim);padding:0 2px}
-.meter-track{position:relative;height:6px;border-top:1px solid var(--lcd-dim);margin:2px 6px 0}
-.meter-needle{position:absolute;top:-8px;width:3px;height:14px;background:var(--lcd-ink);border-radius:2px;transform:translateX(-50%);transition:left .25s ease}
-.lcd.blink .val.limit{animation:blink 1s steps(2) infinite}
-@keyframes blink{50%{opacity:.15}}
-
-/* Simulator */
-.viewer{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000;margin:12px 0;aspect-ratio:400/250}
-.viewer > div{width:100%;height:100%;transition:filter .25s ease}
-.viewer svg{display:block;width:100%;height:100%}
-.seg{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-.seg button{font:inherit;font-family:var(--display);font-weight:700;font-stretch:112%;min-width:52px;padding:8px 12px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.seg.light button{font-family:var(--body);font-weight:400;font-stretch:100%;font-size:.92rem}
-.ctl{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 12px;padding:10px 0;border-top:1px solid var(--line)}
-.ctl:first-of-type{border-top:none}
-.ctl .name{font-weight:700}
-.ctl .who{display:block;font-size:.82rem;color:var(--muted);font-weight:400}
-.stepper{display:flex;align-items:center;gap:6px}
-.stepper button{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer}
-.stepper button:disabled{opacity:.35;cursor:not-allowed}
-.stepper output{min-width:5.2em;text-align:center;font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;font-size:1.05rem}
-.check{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
-.check input{width:22px;height:22px;accent-color:var(--amber)}
-#feedback{list-style:none;padding:0;margin:12px 0 0}
-#feedback li{padding:8px 0 8px 22px;position:relative;border-top:1px solid var(--line)}
-#feedback li::before{content:"";position:absolute;left:4px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--muted)}
-#feedback li.good::before{background:#3E9A5B}
-#feedback li.warn::before{background:var(--amber)}
-.sim-layout{display:grid;gap:16px}
-@media (min-width:760px){.wrap.wide{max-width:1040px}.sim-layout{grid-template-columns:1.2fr 1fr;align-items:start}}
-
-/* Mode dial */
-.dial-area{display:grid;gap:22px;align-items:start;margin-top:18px}
-@media (min-width:680px){.dial-area{grid-template-columns:270px 1fr}}
-.dial-box{position:relative;width:260px;height:260px;margin:0 auto}
-.dial-pointer{position:absolute;left:50%;top:-4px;transform:translateX(-50%);width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-top:14px solid var(--amber);z-index:2}
-.dial{position:absolute;inset:8px;border-radius:50%;background:
-  repeating-conic-gradient(from 0deg, var(--line) 0 1.2deg, transparent 1.2deg 6deg);
-  transition:transform .5s cubic-bezier(.3,.7,.2,1)}
-.dial::after{content:"";position:absolute;inset:16px;border-radius:50%;background:var(--surface);border:1px solid var(--line)}
-.dial-hub{position:absolute;inset:92px;border-radius:50%;background:var(--paper);border:1px solid var(--line);z-index:1}
-.dial button{position:absolute;left:50%;top:50%;z-index:2;font-family:var(--display);font-stretch:118%;font-weight:800;font-size:1.05rem;background:none;border:none;color:var(--ink);padding:6px;cursor:pointer;transition:transform .5s cubic-bezier(.3,.7,.2,1);white-space:nowrap}
-.dial button.green{color:#2F8A4D}
-.dial button[aria-pressed="true"]{color:var(--amber)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dial button.green{color:#6CC88A}}
-:root[data-theme="dark"] .dial button.green{color:#6CC88A}
-#mode-detail h3{margin-top:0;font-size:1.6rem;font-stretch:118%}
-
-/* Focal */
-.fl-view{border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:3/2;margin:12px 0}
-.fl-view svg{display:block;width:100%;height:100%}
-.fl-read{display:flex;gap:16px;flex-wrap:wrap;align-items:baseline}
-.fl-read .big{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:2.4rem;font-variant-numeric:tabular-nums}
-
-/* Tables */
-.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:16px 0}
-table{border-collapse:collapse;width:100%;min-width:620px;font-size:.95rem}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--display);font-stretch:108%;background:var(--surface)}
-tr:last-child td{border-bottom:none}
-
-/* Sunny 16 */
-.s16 label{display:block;font-weight:700;margin:10px 0 4px}
-.s16 select{font:inherit;padding:10px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
-.s16-out{margin-top:14px}
-.s16-out .lcd{margin-bottom:8px}
-
-details{border-top:1px solid var(--line);padding:4px 0}
-details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;font-weight:700;padding:12px 0;font-size:1.05rem}
-details > div{padding:0 0 12px}
-
-footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.9rem}
-
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- Shared scenes and filters -->
+<svg class="defs-svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="flSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E9FCF"/><stop offset="1" stop-color="#CBE3F1"/></linearGradient>
+    <linearGradient id="flSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D7FA3"/><stop offset="1" stop-color="#1E4F6B"/></linearGradient>
+    <filter id="fEdit" color-interpolation-filters="sRGB">
+      <feColorMatrix id="edTemp" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+      <feComponentTransfer>
+        <feFuncR id="edR" type="table" tableValues="0 1"/>
+        <feFuncG id="edG" type="table" tableValues="0 1"/>
+        <feFuncB id="edB" type="table" tableValues="0 1"/>
+      </feComponentTransfer>
+      <feColorMatrix id="edSat" type="saturate" values="1"/>
+    </filter>
+    <g id="coast">
+      <rect width="900" height="380" fill="url(#flSky)"/>
+      <circle cx="760" cy="110" r="40" fill="#FFF1BF"/>
+      <g fill="#FFFFFF" opacity=".85"><ellipse cx="160" cy="90" rx="70" ry="18"/><ellipse cx="210" cy="78" rx="44" ry="18"/><ellipse cx="600" cy="160" rx="60" ry="14"/></g>
+      <path d="M0 372 Q120 330 240 360 T520 352 T900 356 V380 H0Z" fill="#8FA9B6"/>
+      <rect y="370" width="900" height="230" fill="url(#flSea)"/>
+      <g stroke="#2D3940" stroke-width="2" fill="none"><path d="M120 160 q8 -8 16 0 q8 -8 16 0"/><path d="M680 230 q6 -6 12 0 q6 -6 12 0"/></g>
+      <g transform="translate(190 410)"><path d="M-22 10 H22 L14 20 H-14Z" fill="#7A3E2E"/><path d="M0 8 V-34 L20 6Z" fill="#F7F4EC"/><path d="M-2 8 V-26 L-16 6Z" fill="#E7D8B8"/></g>
+      <g transform="translate(720 450)"><path d="M-14 6 H14 L9 13 H-9Z" fill="#3B4A55"/><path d="M0 5 V-20 L12 4Z" fill="#F7F4EC"/></g>
+      <path d="M300 600 C330 470 370 400 410 384 L490 384 C530 400 570 470 610 600Z" fill="#5E7F4B"/>
+      <path d="M330 600 C350 520 380 450 410 420 L420 600Z" fill="#3F5A33"/>
+      <rect x="425" y="372" width="50" height="14" rx="2" fill="#D9D2C2"/>
+      <polygon points="439,382 461,382 456,306 444,306" fill="#F6F4EE"/>
+      <polygon points="440.2,362 459.8,362 458.6,348 441.4,348" fill="#C8433A"/>
+      <polygon points="442.4,334 457.6,334 456.8,322 443.2,322" fill="#C8433A"/>
+      <rect x="447" y="352" width="6" height="9" fill="#3B4A55"/>
+      <rect x="439" y="300" width="22" height="5" fill="#2E3A40"/>
+      <g stroke="#2E3A40" stroke-width=".6"><line x1="440" y1="300" x2="440" y2="296"/><line x1="445" y1="300" x2="445" y2="296"/><line x1="455" y1="300" x2="455" y2="296"/><line x1="460" y1="300" x2="460" y2="296"/><line x1="439" y1="296" x2="461" y2="296"/></g>
+      <rect x="444" y="288" width="12" height="12" fill="#FFE07A" stroke="#2E3A40" stroke-width="1"/>
+      <line x1="450" y1="288" x2="450" y2="300" stroke="#2E3A40" stroke-width=".7"/>
+      <polygon points="442,288 458,288 450,279" fill="#C8433A"/>
+      <circle cx="450" cy="278.5" r="1" fill="#2E3A40"/>
+      <g transform="translate(457.5 294.5)">
+        <ellipse rx="2.6" ry="1.5" fill="#FFFFFF"/>
+        <path d="M-2.4 -.3 L-4.2 -1.2 L-2.6 .6Z" fill="#7C8A92"/>
+        <circle cx="2.2" cy="-1.3" r="1" fill="#FFFFFF"/>
+        <path d="M3 -1.4 L4.3 -1.1 L3 -.9Z" fill="#F0A030"/>
+        <circle cx="2.5" cy="-1.5" r=".22" fill="#111"/>
+      </g>
+      <path d="M0 540 Q200 505 360 560 L360 600 H0Z" fill="#E6D3A6"/>
+      <path d="M640 600 Q760 520 900 530 V600Z" fill="#E6D3A6"/>
+      <g transform="translate(110 545)"><line x1="0" y1="0" x2="0" y2="-60" stroke="#5A4636" stroke-width="3"/><path d="M-46 -54 Q0 -92 46 -54Z" fill="#E0574A"/><path d="M-16 -66 Q0 -92 16 -66Z" fill="#F7F4EC"/></g>
+      <rect x="40" y="572" width="60" height="6" rx="3" fill="#1E2A30" opacity=".6"/>
+    </g>
+  </defs>
+</svg>
+
 <header>
   <div class="wrap">
-    <div class="brand">
-      <a href="#start" data-go="start">Get Off Auto</a>
-      <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch light or dark theme">Theme</button>
+    <div class="bar">
+      <a class="brand" href="#home" data-go="home">Get Off Auto</a>
+      <span class="crumb" id="crumb"></span>
+      <button type="button" id="menuBtn" aria-expanded="false" aria-controls="menu">Contents</button>
+      <button type="button" id="themeBtn" aria-label="Switch light or dark theme">Theme</button>
     </div>
-    <nav aria-label="Guide sections">
-      <ul id="tabs"></ul>
-    </nav>
   </div>
 </header>
 
+<div id="menu" hidden role="dialog" aria-modal="true" aria-label="Contents">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">Contents</span>
+      <button type="button" id="menuClose">Close</button>
+    </div>
+    <div class="toc" id="toc"></div>
+  </div>
+</div>
+
 <main>
 
-<!-- START -->
-<section id="start" data-title="Start here">
+<!-- ================= HOME ================= -->
+<section id="home" data-title="Home">
   <div class="wrap">
     <h1>Every photo is just light, measured.</h1>
-    <p class="lede">Your camera only does three things to light: it lets in a certain amount, for a certain time, and records it with a certain sensitivity. Learn those three and every button starts to make sense.</p>
-
-    <div class="paths">
-      <button data-go="playground"><b>Try it with no camera</b><span>Change settings and watch a photo react in real time.</span></button>
-      <button data-go="modes"><b>What do P, A, S and M mean?</b><span>Turn the mode dial and see who's in charge: you or the camera.</span></button>
-      <button data-go="cheat"><b>Just tell me what to set</b><span>Starting settings for portraits, sport, night and more.</span></button>
+    <p class="lede">A complete beginner's course for digital and film cameras. Learn what every setting does, try it on simulated photos, then go out and shoot with confidence.</p>
+    <div class="home-progress">
+      <div class="progress"><div id="homeBar"></div></div>
+      <p class="small" id="homeProg" style="margin-top:6px"></p>
     </div>
+    <div class="paths">
+      <button data-go="basics"><b>Start the course</b><span>Begin with exposure: the three settings behind every photo.</span></button>
+      <button data-go="playground"><b>Play with a camera</b><span>Change settings and watch a photo react, no camera needed.</span></button>
+      <button data-go="genres"><b>Shoot something specific</b><span>Settings and tips for portraits, sport, night skies and more.</span></button>
+      <button data-go="cheat"><b>Just tell me what to set</b><span>One-page cheat sheet for common situations.</span></button>
+    </div>
+    <div id="homeGroups"></div>
+  </div>
+</section>
 
-    <h2>The exposure triangle</h2>
-    <p><strong>Exposure</strong> means how bright or dark your photo comes out. Three settings control it, and each one also changes how the photo <em>looks</em>. That second part is the real reason to learn them.</p>
+<!-- ================= LEARN ================= -->
+<section id="basics" data-title="Exposure basics" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Exposure basics</h2>
+    <p>Your camera only does three things to light: lets in a certain amount, for a certain time, and records it with a certain sensitivity. <strong>Exposure</strong> is how bright the result comes out. Each setting also changes how the photo <em>looks</em>, and that's the real reason to learn them.</p>
 
     <div class="def">
       <h3>Aperture: how wide the hole is</h3>
-      <p>Inside the lens is an opening that can get bigger or smaller, like the pupil of your eye. It's written as an f-number: f/1.8, f/4, f/8, f/16.</p>
-      <p>The numbers work backwards. <strong>Small number = big opening = more light.</strong> Big number = tiny opening = less light.</p>
-      <p>What it changes in the picture: <strong>how much is in focus.</strong> A wide aperture (f/1.8–f/2.8) blurs the background behind a person. A narrow one (f/8–f/16) keeps everything sharp, from the flowers at your feet to the mountains.</p>
+      <p>Inside the lens is an opening that grows and shrinks, like the pupil of your eye. It's written as an f-number: f/1.8, f/4, f/8, f/16. The numbers work backwards: <strong>small number = big opening = more light.</strong></p>
+      <p>What it changes in the picture: <strong>how much is in focus.</strong> Wide apertures (f/1.4–f/2.8) blur the background. Narrow ones (f/8–f/16) keep everything sharp.</p>
       <div class="panel iris-wrap">
         <svg viewBox="0 0 120 120" aria-hidden="true">
           <circle cx="60" cy="60" r="56" fill="var(--lcd)"/>
           <circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="2"/>
           <circle id="irisHole" cx="60" cy="60" r="40" fill="#F4F6F2"/>
         </svg>
-        <div class="iris-ctl">
+        <div>
           <label for="irisRange" class="small">Drag to change the aperture</label>
           <input id="irisRange" type="range" min="0" max="8" step="1" value="2">
           <div><strong id="irisLabel">f/2.8</strong> <span id="irisNote" class="small"></span></div>
@@ -225,42 +133,635 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 
     <div class="def">
       <h3>Shutter speed: how long the light gets in</h3>
-      <p>The shutter opens for a moment and then closes. That moment is written in fractions of a second: 1/1000 is very quick, 1/60 is fairly slow, 2" means two whole seconds.</p>
-      <p>What it changes in the picture: <strong>movement.</strong> A fast shutter freezes a kid jumping or a bird flying. A slow shutter blurs movement, which can look broken (shaky hands) or beautiful (silky waterfalls, light trails from cars).</p>
-      <p class="small">Rule of thumb: if you're holding the camera by hand, keep the shutter at 1/60 or faster, and faster still with long zoom lenses.</p>
+      <p>The shutter opens and closes. The time is written as a fraction of a second (1/1000 is quick, 1/30 is slow) or in whole seconds with a quote mark (2" is two seconds).</p>
+      <p>What it changes in the picture: <strong>movement.</strong> Fast shutters freeze action. Slow shutters blur it, which can look broken (shaky hands) or beautiful (silky water, light trails).</p>
     </div>
+
+    <div class="table-scroll"><table>
+      <thead><tr><th>Shutter speed</th><th>What it does well</th></tr></thead>
+      <tbody>
+        <tr><td>1/4000–1/2000</td><td>Birds in flight, splashing water, fast sport in bright sun</td></tr>
+        <tr><td>1/1000–1/500</td><td>Running kids and pets, cars, most sport</td></tr>
+        <tr><td>1/250–1/125</td><td>People walking, everyday photos, general use</td></tr>
+        <tr><td>1/60–1/30</td><td>Still subjects by hand indoors; the slowest most people can hold steady</td></tr>
+        <tr><td>1/15–1/2</td><td>Panning with moving subjects, slightly blurred water, needs a steady rest</td></tr>
+        <tr><td>1"–30"</td><td>Silky waterfalls, light trails, night cities, stars: tripod only</td></tr>
+      </tbody>
+    </table></div>
 
     <div class="def">
       <h3>ISO: how sensitive the camera is</h3>
-      <p>ISO is how strongly the camera amplifies the light it receives. ISO 100 is low and clean. ISO 3200 is high: brighter, but grainier.</p>
-      <p>What it changes in the picture: <strong>noise, or grain.</strong> Use low ISO when there's plenty of light, and raise it when it's dark and you can't open the aperture any wider or slow the shutter any further.</p>
-      <p class="small">On film cameras, ISO is decided by the film you load. A roll of ISO 400 film is ISO 400 for all 24 or 36 shots.</p>
+      <p>ISO is how strongly the camera amplifies the light it receives. Low ISO (100–200) is clean; high ISO (3200+) is brighter but grainier.</p>
+      <p>What it changes in the picture: <strong>noise, or grain.</strong> Raise it only when you can't open the aperture wider or slow the shutter further. A sharp grainy photo beats a clean blurry one.</p>
+      <p class="small">On film, ISO is set by the roll you load. ISO 400 film is ISO 400 for the whole roll.</p>
     </div>
 
-    <h3>Stops: the one idea that ties it all together</h3>
-    <p>A <strong>stop</strong> means doubling or halving the light. Going from 1/250 to 1/125 is one stop more light. So is f/5.6 to f/4, or ISO 200 to ISO 400. Because they all use the same unit, you can trade between them: make the shutter one stop faster to freeze action, open the aperture one stop to make up for it, and the brightness stays the same.</p>
-    <div class="tip"><p><strong>Full stops worth memorising:</strong> f/1.4 · 2 · 2.8 · 4 · 5.6 · 8 · 11 · 16 · 22. Each one lets in half the light of the one before. Your camera also shows the in-between thirds, like f/3.2 and f/3.5.</p></div>
+    <h3>Stops: the one idea that ties it together</h3>
+    <p>A <strong>stop</strong> means doubling or halving the light. 1/250 → 1/125 is one stop more. So is f/5.6 → f/4, or ISO 200 → ISO 400. Because they share the same unit, you can trade between them: shutter one stop faster, aperture one stop wider, and the brightness stays the same.</p>
+    <div class="tip"><p><strong>Full aperture stops:</strong> f/1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22. Each lets in half the light of the one before. Cameras also show the thirds in between, like f/3.2 and f/3.5.</p></div>
 
-    <button class="next" data-go="playground">Try it in the playground</button>
+    <h3>Why the camera gets it wrong sometimes</h3>
+    <p>The light meter assumes the world averages out to a middle grey. That works most of the time, but snow and white walls get made too dark (grey snow), and black cats or night scenes get made too bright. When that happens, use <strong>exposure compensation</strong> to tell the camera "brighter" or "darker".</p>
   </div>
 </section>
 
-<!-- PLAYGROUND -->
-<section id="playground" data-title="Playground" hidden>
-  <div class="wrap wide">
-    <h2>Exposure playground</h2>
-    <p>Pick a mode, change the settings, and watch what happens. The settings marked <em>camera sets</em> are chosen for you, just like on a real camera in that mode.</p>
+<section id="anatomy" data-title="Know your camera" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Know your camera</h2>
+    <p>Tap the dots to learn what each part does. Your camera will look a little different, but these parts are on almost every model.</p>
+    <div class="seg" id="anatSeg" role="group" aria-label="Camera type">
+      <button type="button" data-v="digital" aria-pressed="true">Digital (back)</button>
+      <button type="button" data-v="film" aria-pressed="false">Film SLR (top)</button>
+    </div>
+    <div class="two-col">
+      <div class="panel anat">
+        <svg id="anatDigital" viewBox="0 0 400 260" role="group" aria-label="Back of a digital camera">
+          <rect x="20" y="60" width="300" height="175" rx="22" fill="#2B3135"/>
+          <rect x="280" y="44" width="100" height="191" rx="26" fill="#252A2E"/>
+          <path d="M140 62 L160 22 H240 L260 62Z" fill="#30363A"/>
+          <rect x="180" y="15" width="40" height="8" rx="2" fill="#555D63"/>
+          <rect x="172" y="38" width="56" height="36" rx="8" fill="#15191C"/>
+          <rect x="182" y="46" width="36" height="20" rx="4" fill="#3B4A55"/>
+          <circle cx="240" cy="58" r="5" fill="#4A5258"/>
+          <rect x="50" y="40" width="70" height="20" rx="4" fill="#3A4146"/>
+          <g stroke="#23282B" stroke-width="2"><line x1="58" y1="42" x2="58" y2="58"/><line x1="68" y1="42" x2="68" y2="58"/><line x1="78" y1="42" x2="78" y2="58"/><line x1="88" y1="42" x2="88" y2="58"/><line x1="98" y1="42" x2="98" y2="58"/><line x1="108" y1="42" x2="108" y2="58"/></g>
+          <ellipse cx="335" cy="44" rx="18" ry="6" fill="#4A5258"/>
+          <circle cx="292" cy="54" r="7" fill="#3A4146"/>
+          <rect x="300" y="72" width="50" height="11" rx="3" fill="#3A4146"/>
+          <rect x="45" y="92" width="220" height="125" rx="6" fill="#0F1417" stroke="#454D53"/>
+          <text x="155" y="160" fill="#56616A" font-size="13" text-anchor="middle" font-family="sans-serif">rear screen</text>
+          <circle cx="300" cy="106" r="10" fill="#3A4146"/><text x="300" y="110" font-size="7" fill="#C9CED2" text-anchor="middle" font-family="sans-serif">AF-ON</text>
+          <circle cx="345" cy="106" r="10" fill="#3A4146"/><text x="345" y="110" font-size="8" fill="#C9CED2" text-anchor="middle" font-family="sans-serif">ISO</text>
+          <circle cx="322" cy="158" r="25" fill="#3A4146"/><circle cx="322" cy="158" r="10" fill="#2B3135"/>
+          <circle cx="300" cy="208" r="9" fill="#3A4146"/><text x="300" y="211" font-size="6" fill="#C9CED2" text-anchor="middle" font-family="sans-serif">MENU</text>
+          <circle cx="344" cy="208" r="9" fill="#3A4146"/><path d="M341 204 L348 208 L341 212Z" fill="#C9CED2"/>
+          <rect x="372" y="110" width="8" height="70" rx="3" fill="#1C2023"/>
+          <g id="hotsDigital"></g>
+        </svg>
+        <svg id="anatFilm" viewBox="0 0 400 250" role="group" aria-label="Top of a film SLR camera" hidden>
+          <rect x="20" y="70" width="360" height="72" rx="10" fill="#C9CDD0"/>
+          <rect x="20" y="118" width="360" height="24" rx="6" fill="#2B3135"/>
+          <rect x="160" y="64" width="80" height="62" rx="6" fill="#2B3135"/>
+          <rect x="178" y="70" width="44" height="12" rx="2" fill="#555D63"/>
+          <rect x="165" y="142" width="70" height="96" fill="#2B3135"/>
+          <rect x="165" y="142" width="70" height="20" fill="#3A4146"/>
+          <text x="200" y="156" font-size="8" fill="#E8E8E8" text-anchor="middle" font-family="sans-serif">16 11 8 5.6 4 2.8</text>
+          <rect x="165" y="162" width="70" height="10" fill="#2B3135"/>
+          <text x="200" y="170" font-size="6" fill="#F0B640" text-anchor="middle" font-family="sans-serif">16 8 4 | 4 8 16</text>
+          <rect x="165" y="172" width="70" height="34" fill="#1F2427"/>
+          <g stroke="#3A4146" stroke-width="2"><line x1="170" y1="172" x2="170" y2="206"/><line x1="178" y1="172" x2="178" y2="206"/><line x1="186" y1="172" x2="186" y2="206"/><line x1="194" y1="172" x2="194" y2="206"/><line x1="202" y1="172" x2="202" y2="206"/><line x1="210" y1="172" x2="210" y2="206"/><line x1="218" y1="172" x2="218" y2="206"/><line x1="226" y1="172" x2="226" y2="206"/></g>
+          <rect x="168" y="206" width="64" height="32" fill="#3A4146"/>
+          <circle cx="70" cy="100" r="22" fill="#A9AEB2" stroke="#8A9094"/>
+          <path d="M70 100 L92 88" stroke="#5A6166" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="300" cy="98" r="22" fill="#A9AEB2" stroke="#8A9094"/>
+          <text x="300" y="92" font-size="7" fill="#1F262B" text-anchor="middle" font-family="sans-serif">125 250</text>
+          <text x="300" y="104" font-size="7" fill="#1F262B" text-anchor="middle" font-family="sans-serif">60 500</text>
+          <rect x="292" y="107" width="16" height="7" fill="#1F262B"/><text x="300" y="113" font-size="5" fill="#F0B640" text-anchor="middle" font-family="sans-serif">400</text>
+          <circle cx="330" cy="128" r="6" fill="#5A6166"/>
+          <circle cx="358" cy="88" r="8" fill="#2B3135"/><text x="358" y="91" font-size="7" fill="#fff" text-anchor="middle" font-family="sans-serif">12</text>
+          <path d="M318 86 Q350 70 382 92 L378 98 Q350 80 322 92Z" fill="#5A6166"/>
+          <rect x="240" y="142" width="16" height="10" rx="2" fill="#8A9094"/>
+          <g id="hotsFilm"></g>
+        </svg>
+      </div>
+      <div class="panel detail" id="anatDetail" aria-live="polite"><p class="small">Tap a dot on the camera.</p></div>
+    </div>
+  </div>
+</section>
 
-    <div class="sim-layout">
+<section id="modes" data-title="The mode dial" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>The mode dial</h2>
+    <p>The mode dial decides <strong>who makes which decision</strong>. Each step from Auto towards M hands one more choice from the camera to you. Tap a mode to turn the dial.</p>
+    <div class="dial-area">
+      <div class="dial-box">
+        <div class="dial-pointer" aria-hidden="true"></div>
+        <div class="dial" id="dial"></div>
+        <div class="dial-hub" aria-hidden="true"></div>
+      </div>
+      <div id="modeDetail" class="panel detail" aria-live="polite"></div>
+    </div>
+    <h3>Which mode should a beginner use?</h3>
+    <p>Start in <strong>A (Av on Canon)</strong>. You pick the aperture, which decides the look of the photo, and the camera handles the shutter speed. Glance at the shutter number: if it drops below 1/60, raise the ISO.</p>
+    <p>Once that feels natural, use <strong>S</strong> for anything that moves, and <strong>M</strong> when the light isn't changing, like a sunset or a night scene on a tripod.</p>
+    <h3>Custom modes (C1, C2, U1…)</h3>
+    <p>Some cameras have custom positions that save a whole set of settings. Set up your favourite sport settings once, save them to C1, and switch to them in one turn.</p>
+  </div>
+</section>
+
+<section id="lenses" data-title="Lenses and focal length" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Lenses and focal length</h2>
+    <p>Focal length is the number in millimetres on your lens, like 18–55mm or 50mm. <strong>Smaller number = wider view.</strong> Bigger number = closer, narrower view. Drag the slider.</p>
+    <div class="frame32">
+      <svg id="flSvg" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A coastal scene with a lighthouse that zooms as focal length changes"><use href="#coast"/></svg>
+    </div>
+    <input id="flRange" type="range" min="0" max="12" step="1" value="5" aria-label="Focal length">
+    <div class="fl-read"><span class="big" id="flMm">50mm</span><span id="flKind"></span></div>
+    <p class="small" id="flAngle"></p>
+    <label class="check"><input type="checkbox" id="crop"> My camera has a smaller APS-C sensor (most entry-level cameras)</label>
+    <p id="flUse"></p>
+
+    <h3>Sensor size and "crop factor"</h3>
+    <p>Full-frame sensors are the same size as a frame of 35mm film. Smaller sensors see only the middle of what the lens projects, so every lens looks more zoomed in.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Sensor</th><th>Crop factor</th><th>A 50mm lens looks like</th><th>Found in</th></tr></thead>
+      <tbody>
+        <tr><td>Full frame / 35mm film</td><td>1×</td><td>50mm</td><td>Higher-end cameras, all 35mm film cameras</td></tr>
+        <tr><td>APS-C</td><td>1.5× (Canon 1.6×)</td><td>75–80mm</td><td>Most entry and mid-level cameras</td></tr>
+        <tr><td>Micro Four Thirds</td><td>2×</td><td>100mm</td><td>OM System/Olympus, Panasonic</td></tr>
+        <tr><td>1-inch</td><td>about 2.7×</td><td>about 135mm</td><td>Premium compacts</td></tr>
+        <tr><td>Medium format</td><td>about 0.8× or less</td><td>about 40mm</td><td>Fujifilm GFX, Hasselblad, 120 film cameras</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">Bigger sensors generally mean cleaner high-ISO photos and blurrier backgrounds at the same framing. Smaller sensors mean smaller, lighter gear and extra "reach" for wildlife.</p>
+
+    <h3>Zoom lenses and prime lenses</h3>
+    <div class="grid2">
+      <div class="panel"><strong>Zoom</strong> (18–55mm, 70–300mm)<p class="small" style="margin:6px 0 0">Covers many focal lengths. Flexible, but usually doesn't open as wide, so it needs more light.</p></div>
+      <div class="panel"><strong>Prime</strong> (35mm, 50mm f/1.8)<p class="small" style="margin:6px 0 0">One fixed focal length; zoom with your feet. Usually sharper and much brighter. A 50mm f/1.8 is the best-value upgrade for most beginners.</p></div>
+    </div>
+
+    <h3>Reading a lens</h3>
+    <p><strong>18–55mm 1:3.5–5.6</strong> zooms from 18 to 55mm; widest aperture is f/3.5 at 18mm, shrinking to f/5.6 zoomed in. <strong>50mm 1:1.8</strong> is a prime that opens to f/1.8. <strong>IS, VR, OSS, OIS</strong> mean built-in stabilisation. <strong>Macro</strong> means it focuses very close. <strong>Ø58</strong> is the filter thread size in millimetres.</p>
+
+    <h3>Special lens types</h3>
+    <dl class="kv">
+      <dt>Macro</dt><dd>Focuses close enough to fill the frame with a coin or an insect.</dd>
+      <dt>Fisheye</dt><dd>Extremely wide with curved, bubble-like distortion.</dd>
+      <dt>Superzoom (e.g. 18–200mm)</dt><dd>One lens for everything; great for travel, softer and darker than specialised lenses.</dd>
+      <dt>Teleconverter</dt><dd>Fits between camera and telephoto lens to multiply its reach (1.4× or 2×), costing one or two stops of light.</dd>
+      <dt>Tilt-shift</dt><dd>Keeps building lines straight, or creates the "miniature" effect.</dd>
+    </dl>
+
+    <h3>Focal length and faces</h3>
+    <p>Wide lenses up close stretch features: noses look bigger, foreheads bulge. For flattering portraits, step back and use 50–135mm. It isn't the lens causing it; it's how close you're standing.</p>
+  </div>
+</section>
+
+<section id="focus" data-title="Focus and sharpness" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Focus and sharpness</h2>
+    <p>Blurry photos have one of three causes: <strong>missed focus</strong>, <strong>camera shake</strong> or <strong>subject movement</strong>. Learn to tell them apart and you can fix every one.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>What you see</th><th>Cause</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>Something else is sharp, just not your subject</td><td>Missed focus</td><td>Single focus point on the subject, or eye detection</td></tr>
+        <tr><td>Everything is smeared in the same direction</td><td>Camera shake</td><td>Faster shutter, stabilisation, tripod, better grip</td></tr>
+        <tr><td>Background is sharp, moving subject is smeared</td><td>Subject movement</td><td>Faster shutter (1/500+)</td></tr>
+        <tr><td>Nothing is quite sharp anywhere</td><td>Dirty lens, cheap filter, or extreme aperture</td><td>Clean the lens, remove the filter, use f/5.6–f/8</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>The half-press</h3>
+    <p>Press the shutter button halfway: the camera focuses and measures light. Press fully to take the photo. Jabbing it straight down is the most common cause of blur.</p>
+
+    <h3>Focus modes</h3>
+    <dl class="kv">
+      <dt>AF-S / One Shot</dt><dd>Focuses once and locks. For still subjects.</dd>
+      <dt>AF-C / AI Servo</dt><dd>Keeps tracking while you hold the half-press. For anything that moves.</dd>
+      <dt>AF-A / AI Focus</dt><dd>Camera guesses which you need. Fine, but less predictable.</dd>
+      <dt>MF</dt><dd>You turn the focus ring. For low light, through glass, or close-ups. Use magnification or focus peaking on screen to help.</dd>
+    </dl>
+
+    <h3>Focus areas</h3>
+    <dl class="kv">
+      <dt>Single point</dt><dd>You choose exactly where. Most reliable for still subjects.</dd>
+      <dt>Zone / group</dt><dd>A cluster of points. Good for birds and sport where the subject moves around a bit.</dd>
+      <dt>Wide / auto area</dt><dd>Camera chooses, usually picking the closest thing. Fine with face or eye detection on.</dd>
+      <dt>Tracking</dt><dd>You tell it what to follow, and it follows that subject around the frame.</dd>
+    </dl>
+
+    <h3>Focus and recompose, or back-button focus</h3>
+    <p>To focus on something off-centre with a centre point: half-press on the subject, keep holding, move the camera to frame, then press fully. Many enthusiasts move focus to the <strong>AF-ON</strong> button on the back instead, so the shutter button only takes photos. Hold AF-ON to track, release it to lock.</p>
+
+    <h3>What decides depth of field</h3>
+    <p>Depth of field is how much of the scene from front to back looks sharp. Four things change it:</p>
+    <ul>
+      <li><strong>Aperture:</strong> wider (f/1.8) = shallower.</li>
+      <li><strong>Distance:</strong> closer to the subject = shallower.</li>
+      <li><strong>Focal length:</strong> longer = looks shallower at the same framing, with background more blurred.</li>
+      <li><strong>Background distance:</strong> move the subject away from the background for more blur.</li>
+    </ul>
+    <p><button type="button" class="btn ghost" data-go="dof">Open the depth of field calculator</button></p>
+
+    <h3>Holding steady</h3>
+    <ul>
+      <li>Shutter at least 1 over your focal length: 1/50 at 50mm, 1/200 at 200mm (multiply by the crop factor on APS-C).</li>
+      <li>Stabilisation can give you 2–5 extra stops. It fixes shake, never subject movement.</li>
+      <li>Elbows tucked in, left hand cradling the lens, camera against your face.</li>
+      <li>Breathe out, then squeeze the button. Shoot a short burst; one frame is usually sharpest.</li>
+      <li>Lean on walls, rest on railings, use a beanbag, or a 2-second timer on a tripod.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="settings" data-title="Menu settings explained" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Menu settings explained</h2>
+    <p>Menus are full of abbreviations. These are the ones that matter. Tap any to open it.</p>
+
+    <details open><summary>Exposure compensation (+/−)</summary><div>
+      <p>Tells the camera "brighter than you think" or "darker". Works in P, A, S, Auto ISO and many Auto modes. +1 is twice as bright.</p>
+      <p>Snow and white sand: +1. Sunsets and dark scenes: −0.7 to −1. Set it back to 0 afterwards.</p>
+    </div></details>
+
+    <details><summary>Metering: matrix, centre-weighted, spot</summary><div>
+      <dl class="kv">
+        <dt>Matrix / Evaluative / Multi</dt><dd>Measures the whole frame and makes a smart guess. Leave it here most of the time.</dd>
+        <dt>Centre-weighted</dt><dd>Mostly the middle. How most older film cameras meter.</dd>
+        <dt>Spot</dt><dd>A tiny area only. For a person on stage under a spotlight or against a bright window.</dd>
+        <dt>Highlight-weighted</dt><dd>Protects the brightest parts. Great for concerts and stage lighting.</dd>
+      </dl>
+    </div></details>
+
+    <details><summary>White balance (WB)</summary><div>
+      <p>Light comes in different colours. White balance corrects it so white looks white. Auto works well; try <em>Daylight</em> at sunset to keep warm colours. The <a href="#light" data-go="light">Light lesson</a> has a live demo.</p>
+    </div></details>
+
+    <details><summary>Auto ISO</summary><div>
+      <p>Raises ISO only when needed. With A or S mode it's the ideal beginner setup. In the menu, set a <strong>maximum ISO</strong> (3200–6400) and a <strong>minimum shutter speed</strong> (1/125 for people, 1/500 for kids and pets).</p>
+    </div></details>
+
+    <details><summary>Drive mode</summary><div>
+      <p><strong>Single:</strong> one photo per press. <strong>Continuous (L/H):</strong> keeps shooting while held; pick the best later. <strong>Self-timer 2s/10s:</strong> no shake on a tripod, or get in the photo. <strong>Interval timer:</strong> for time-lapses.</p>
+    </div></details>
+
+    <details><summary>Image quality: RAW vs JPEG</summary><div>
+      <p><strong>JPEG:</strong> finished, small, ready to share. <strong>RAW:</strong> everything the sensor saw, so you can fix brightness and colour far more later, but needs editing software. Not sure? Choose <strong>RAW + JPEG</strong>.</p>
+      <p>Set JPEG to <em>Large / Fine</em>. There's no reason to save smaller files on today's cards.</p>
+    </div></details>
+
+    <details><summary>Picture style / Picture control / Film simulation</summary><div>
+      <p>Changes how JPEGs look: Standard, Vivid, Portrait, Monochrome, and on Fujifilm, film simulations. They don't affect RAW files, which you can restyle later.</p>
+    </div></details>
+
+    <details><summary>Image stabilisation (IS, VR, OSS, IBIS)</summary><div>
+      <p>Counteracts hand shake so you can use slower shutters. IBIS is in the body, the others in the lens. Leave it on handheld; some systems should be switched off on a tripod (check your manual). It doesn't freeze moving subjects.</p>
+    </div></details>
+
+    <details><summary>The histogram</summary><div>
+      <p>The mountain graph shows dark tones on the left and bright on the right. Crammed against the right edge = highlights lost to white. Crammed left = shadows lost to black. Trust it over the screen, which looks different in sun and in a dark room. The <a href="#playground" data-go="playground">Playground</a> has a live one.</p>
+    </div></details>
+
+    <details><summary>Highlight alert ("blinkies")</summary><div>
+      <p>Turn this on in playback settings. Areas that are pure white will flash. If something important is blinking, use exposure compensation to darken.</p>
+    </div></details>
+
+    <details><summary>Silent / electronic shutter</summary><div>
+      <p>Mirrorless cameras can take photos with no moving shutter: silent, and often very fast. Downsides: fast-moving things can look bent ("rolling shutter"), and flickering lights can cause banding. Use the mechanical shutter for sport and under artificial lights.</p>
+    </div></details>
+
+    <details><summary>Long exposure noise reduction</summary><div>
+      <p>After a long exposure, the camera takes a second dark frame of equal length to subtract noise. Useful, but it doubles your wait. Turn it off for star photos and time-lapses.</p>
+    </div></details>
+
+    <details><summary>Memory cards and formatting</summary><div>
+      <p>Format new cards <em>in the camera</em>, not on a computer. Don't remove the card while the light is blinking. For video, look for a <strong>V30</strong> or <strong>U3</strong> rating. A few smaller cards are safer than one huge one: a lost card isn't a lost trip.</p>
+    </div></details>
+
+    <details><summary>Date, time and copyright</summary><div>
+      <p>Set the clock correctly (and update it when travelling) so photos sort properly. Many cameras let you enter your name in a copyright field that's saved in every file.</p>
+    </div></details>
+  </div>
+</section>
+
+<section id="light" data-title="Understanding light" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Understanding light</h2>
+    <p>The best photographers aren't looking at subjects, they're looking at light. Four things describe any light: its <strong>direction</strong>, <strong>quality</strong> (hard or soft), <strong>colour</strong> and <strong>strength</strong>.</p>
+
+    <h3>Direction</h3>
+    <p>Move the light around the subject. The small diagram shows where the light is compared with the camera.</p>
+    <div class="panel">
+      <svg viewBox="0 0 400 220" style="width:100%;display:block" role="img" aria-label="A sphere lit from a changing direction">
+        <defs>
+          <radialGradient id="ballGrad" cx="0.5" cy="0.5" r="0.75" fx="0.5" fy="0.4">
+            <stop id="bgS0" offset="0" stop-color="#FFF4E0"/>
+            <stop id="bgS1" offset="0.55" stop-color="#E0A060"/>
+            <stop id="bgS2" offset="1" stop-color="#2A1A10"/>
+          </radialGradient>
+          <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur id="shBlur" stdDeviation="2"/></filter>
+        </defs>
+        <rect width="400" height="220" fill="#3A4146"/>
+        <rect y="160" width="300" height="60" fill="#4A5258"/>
+        <ellipse id="ballShadow" cx="150" cy="172" rx="50" ry="9" fill="#1A1E21" filter="url(#shadowBlur)" opacity=".8"/>
+        <circle cx="150" cy="105" r="62" fill="url(#ballGrad)"/>
+        <circle id="ballRim" cx="150" cy="105" r="61" fill="none" stroke="#FFF4E0" stroke-width="3" opacity="0"/>
+        <g transform="translate(345 100)">
+          <circle r="44" fill="none" stroke="#6A747A" stroke-dasharray="3 4"/>
+          <circle r="8" fill="#E0A060"/>
+          <rect x="-9" y="48" width="18" height="12" rx="2" fill="#C9CED2"/>
+          <text y="76" fill="#C9CED2" font-size="10" text-anchor="middle" font-family="sans-serif">camera</text>
+          <circle id="lampDot" cx="0" cy="44" r="7" fill="#FFE07A"/>
+        </g>
+      </svg>
+      <input type="range" id="lightAng" min="-180" max="180" value="35" aria-label="Light direction">
+      <div class="seg soft" id="lightQual" role="group" aria-label="Light quality">
+        <button type="button" data-q="hard" aria-pressed="true">Hard light (bare sun)</button>
+        <button type="button" data-q="soft" aria-pressed="false">Soft light (cloud, window)</button>
+      </div>
+      <p id="lightText" style="margin:8px 0 0"></p>
+    </div>
+
+    <h3>Hard and soft</h3>
+    <p><strong>Hard light</strong> comes from a small, bright source like the midday sun or a bare flash. It makes crisp, dark shadows: dramatic, but unflattering on faces. <strong>Soft light</strong> comes from a big source: a cloudy sky, a large window, a flash bounced off the ceiling. Shadows fade gently, which flatters almost everything. The bigger and closer the light, the softer it gets.</p>
+
+    <h3>Time of day</h3>
+    <dl class="kv">
+      <dt>Golden hour</dt><dd>Roughly the hour after sunrise and before sunset. Warm, low, soft light with long shadows. The favourite time for portraits and landscapes.</dd>
+      <dt>Blue hour</dt><dd>The 20–40 minutes after sunset (or before sunrise) when the sky turns deep blue. Perfect for cities with lights on.</dd>
+      <dt>Midday</dt><dd>Harsh, overhead light. Move people into open shade, or shoot architecture and strong graphic shapes.</dd>
+      <dt>Overcast</dt><dd>A giant softbox in the sky. Great for portraits, waterfalls, forests and flowers; boring skies, so leave them out of frame.</dd>
+    </dl>
+
+    <h3>Colour of light and white balance</h3>
+    <p>Light colour is measured in kelvin (K): low numbers are orange, high numbers are blue. Your camera's white balance setting tries to cancel it out. Try mismatching them:</p>
+    <div class="panel">
+      <div class="frame32" style="margin-top:0">
+        <svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Scene showing a colour cast from white balance">
+          <use href="#coast"/>
+          <rect id="wbCast" width="900" height="600" fill="#FF8A2A" opacity="0"/>
+        </svg>
+      </div>
+      <div class="fields">
+        <div><label class="field" for="wbLight">The light is</label>
+          <select id="wbLight">
+            <option value="1900">Candle (1900K)</option><option value="3200">Indoor bulb (3200K)</option><option value="4000">Fluorescent (4000K)</option>
+            <option value="5500" selected>Midday sun (5500K)</option><option value="6500">Cloudy (6500K)</option><option value="8000">Open shade (8000K)</option>
+          </select></div>
+        <div><label class="field" for="wbCam">Camera WB set to</label>
+          <select id="wbCam">
+            <option value="3200">Tungsten (3200K)</option><option value="4000">Fluorescent (4000K)</option><option value="5500" selected>Daylight (5500K)</option>
+            <option value="6500">Cloudy (6500K)</option><option value="8000">Shade (8000K)</option>
+          </select></div>
+      </div>
+      <p id="wbText" style="margin:12px 0 0"></p>
+    </div>
+
+    <h3>Flash</h3>
+    <ul>
+      <li><strong>Pop-up flash straight on</strong> looks flat with harsh shadows behind people. Try raising ISO first.</li>
+      <li><strong>Bounce flash:</strong> an add-on flash pointed at a white ceiling or wall turns a small hard light into a big soft one.</li>
+      <li><strong>Fill flash:</strong> outdoors in sun, a little flash lifts dark shadows under hats and eyes. Use flash compensation around −1.</li>
+      <li><strong>Sync speed:</strong> most cameras can't use flash faster than about 1/200 or 1/250 unless you turn on high-speed sync (HSS).</li>
+      <li><strong>Slow sync / night portrait:</strong> flash freezes the person while a slow shutter lets the city lights in behind.</li>
+      <li><strong>Red-eye</strong> comes from flash close to the lens. Bounce it, or ask people not to look straight into it.</li>
+    </ul>
+
+    <h3>Free light shapers</h3>
+    <p>A white sheet of card bounces light into shadows. Kitchen foil works as a hard reflector. A sheer curtain softens a sunny window. Someone in a white shirt standing just out of frame is a reflector too.</p>
+  </div>
+</section>
+
+<section id="composition" data-title="Composition" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Composition</h2>
+    <p>Composition is where you put things in the frame. Settings make a photo correct; composition makes it interesting.</p>
+
+    <h3>Try it: drag the horizon and the boat</h3>
+    <div class="panel">
+      <div class="frame32 comp-frame" style="margin-top:0">
+        <svg id="compSvg" viewBox="0 0 600 400" role="img" aria-label="Drag the sailboat and horizon to compose a photo">
+          <defs>
+            <linearGradient id="cSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3A35C"/><stop offset="1" stop-color="#FCE2B0"/></linearGradient>
+            <linearGradient id="cSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5D7FA0"/><stop offset="1" stop-color="#2B4560"/></linearGradient>
+          </defs>
+          <rect width="600" height="400" fill="url(#cSky)"/>
+          <g id="cHorizon" style="cursor:ns-resize">
+            <circle cx="470" cy="-10" r="28" fill="#FFF0C8"/>
+            <rect y="0" width="600" height="420" fill="url(#cSea)"/>
+            <path d="M440 6 H500 M450 14 H490" stroke="#FFE0A0" stroke-width="3" opacity=".7"/>
+          </g>
+          <g id="cBoat" style="cursor:move">
+            <circle r="44" fill="transparent"/>
+            <path d="M-26 10 H26 L18 22 H-18Z" fill="#2A2420"/>
+            <path d="M0 8 V-44 L24 6Z" fill="#FBF3E4"/>
+            <path d="M-3 8 V-34 L-20 6Z" fill="#E6D6B8"/>
+          </g>
+          <g id="cGuides" stroke="#FFFFFF" stroke-width="1.5" opacity=".75" fill="none" pointer-events="none"></g>
+        </svg>
+      </div>
+      <div class="seg soft" id="guideSeg" role="group" aria-label="Guide lines">
+        <button type="button" data-g="thirds" aria-pressed="true">Rule of thirds</button>
+        <button type="button" data-g="phi" aria-pressed="false">Golden ratio</button>
+        <button type="button" data-g="centre" aria-pressed="false">Centre</button>
+        <button type="button" data-g="none" aria-pressed="false">No guides</button>
+      </div>
+      <p class="small">Drag the boat anywhere. Drag the sea up or down to move the horizon.</p>
+      <ul class="feedback" id="compFb"></ul>
+    </div>
+
+    <h3>Twelve ideas to try</h3>
+    <dl class="kv">
+      <dt>Rule of thirds</dt><dd>Put the subject or horizon on the lines a third of the way in. Turn on the grid in your camera's display settings.</dd>
+      <dt>Fill the frame</dt><dd>Get closer than feels natural. Most beginner photos have too much empty space.</dd>
+      <dt>Simplify</dt><dd>Decide what the photo is about and remove everything that isn't helping.</dd>
+      <dt>Check the edges</dt><dd>Poles out of heads, bins, half a stranger, bright signs. One step sideways fixes most of them.</dd>
+      <dt>Leading lines</dt><dd>Roads, fences, rivers and shorelines pull the eye towards your subject.</dd>
+      <dt>Give movement room</dt><dd>Leave space in front of a moving subject or someone's gaze, not behind.</dd>
+      <dt>Frame within a frame</dt><dd>Shoot through doorways, windows, arches or branches.</dd>
+      <dt>Foreground interest</dt><dd>In landscapes, put a rock or flowers near the bottom to add depth.</dd>
+      <dt>Symmetry and patterns</dt><dd>Break the thirds rule: symmetry belongs in the centre. A pattern with one thing breaking it is even better.</dd>
+      <dt>Change your height</dt><dd>Crouch to kids' and pets' eye level. Shoot from low to make things grand, from above for food and flat lays.</dd>
+      <dt>Negative space</dt><dd>A small subject in a big empty sky or wall can feel calm and powerful.</dd>
+      <dt>Straight horizons</dt><dd>A tilted sea is the easiest mistake to spot. Use the grid or the camera's level.</dd>
+    </dl>
+    <h3>Vertical or horizontal?</h3>
+    <p>Turn the camera to match the subject: tall things (people, trees, buildings) suit vertical; wide things (beaches, groups, skylines) suit horizontal. When in doubt, take both.</p>
+  </div>
+</section>
+
+<section id="film" data-title="Shooting film" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Shooting film</h2>
+    <p>Film cameras use exactly the same three controls. The differences: ISO is fixed by the roll, you can't check shots until they're developed, and many older cameras leave every decision to you.</p>
+
+    <h3>Choosing film</h3>
+    <dl class="kv">
+      <dt>ISO 100–200</dt><dd>Bright sunny days. Fine grain, rich colour.</dd>
+      <dt>ISO 400</dt><dd>The all-rounder for sun, cloud, shade and bright indoors. Best first roll.</dd>
+      <dt>ISO 800–3200</dt><dd>Dim light and night. More grain, which many people love.</dd>
+      <dt>Colour negative (C-41)</dt><dd>The usual kind. Very forgiving of overexposure: if unsure, give it more light.</dd>
+      <dt>Black and white</dt><dd>Forgiving, cheap to develop at home, great for learning light.</dd>
+      <dt>Slide film (E-6)</dt><dd>Stunning colour, but strict about exposure. For once you're confident.</dd>
+    </dl>
+
+    <h3>Formats</h3>
+    <dl class="kv">
+      <dt>35mm</dt><dd>The common small roll: 24 or 36 shots. Fits most film SLRs and point-and-shoots.</dd>
+      <dt>Half-frame</dt><dd>35mm film, but each shot uses half a frame: 72 shots per 36-exposure roll.</dd>
+      <dt>120 (medium format)</dt><dd>Wider paper-backed film: 8 to 16 shots depending on the camera (6×9, 6×7, 6×6, 6×4.5). Much more detail.</dd>
+      <dt>Instant</dt><dd>Polaroid and Instax print straight out of the camera.</dd>
+    </dl>
+
+    <h3>Loading 35mm</h3>
+    <ol>
+      <li>Open the back in shade. On most cameras, pull up the rewind knob.</li>
+      <li>Drop the canister in on the left, push the knob back down.</li>
+      <li>Tuck the leader into the take-up spool, with the sprocket holes on the teeth.</li>
+      <li>Wind and fire once, close the back, then wind and fire until the counter shows 1.</li>
+      <li><strong>Check the rewind knob turns as you wind.</strong> If it doesn't, the film isn't moving.</li>
+      <li>Set the film's ISO on the camera's ISO/ASA dial if it has one.</li>
+    </ol>
+
+    <h3>Finishing a roll</h3>
+    <p>When the lever won't wind any further, <strong>don't open the back.</strong> Press the rewind release button underneath, turn the crank until it goes slack, then open. Opening early ruins the film.</p>
+
+    <h3>Metering on film cameras</h3>
+    <p>Built-in meters show a needle or lights in the viewfinder; balance them in the middle. Most need a small battery, so check that first if nothing moves. Some old cameras were designed for mercury batteries that aren't made any more; adapters and substitute cells exist. No meter? Use a phone light meter app or the <a href="#sunny16" data-go="sunny16">Sunny 16 helper</a>.</p>
+
+    <h3>Manual focus aids</h3>
+    <p>Film SLRs often have a <strong>split-image circle</strong>: line it up on an edge and turn the ring until the halves join. Rangefinders show a ghost image to overlap. Many lenses have a <strong>depth of field scale</strong>: for street photography, set f/8 and focus at about 3m, and roughly 1.5m to 10m will be acceptably sharp without refocusing ("zone focusing").</p>
+
+    <h3>Push and pull</h3>
+    <p>You can rate film at a different ISO, then tell the lab. Shooting ISO 400 film at 1600 is a "two-stop push": the lab develops longer to compensate. More contrast and grain, but usable in the dark. Pulling is the reverse. Always rate the <em>whole roll</em> at the same speed.</p>
+
+    <h3>Developing</h3>
+    <p>Any photo lab that handles film can develop and scan it, usually within a week. Ask for scans emailed and keep your negatives somewhere cool and dry. Black and white is easy to develop at home with a developing tank, a changing bag and three chemicals: developer, stop and fixer.</p>
+    <p class="small">Long exposures on film need extra time beyond what the meter says (reciprocity failure). The <a href="#reciprocity" data-go="reciprocity">reciprocity calculator</a> works it out.</p>
+
+    <div class="tip"><p><strong>Checking a second-hand film camera:</strong> open the back and fire at the slowest speed while looking through. It should open and close cleanly. Try a fast speed too. Shine a torch through the lens for haze or fungus, and check the aperture blades are dry and snappy, not oily. Run a cheap roll through before trusting it with something important.</p></div>
+  </div>
+</section>
+
+<section id="editing" data-title="Editing basics" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Editing basics</h2>
+    <p>Almost every great photo is edited a little. Every editing app, from your phone to Lightroom, uses the same core sliders. Try them here.</p>
+    <div class="two-col">
+      <div>
+        <div class="frame32" style="margin-top:0">
+          <svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A photo that changes as you edit"><use id="editUse" href="#coast" filter="url(#fEdit)"/></svg>
+        </div>
+        <div class="edit-curve">
+          <svg viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="0" y1="60" x2="100" y2="0" stroke="#5A4A2A" stroke-width="1" stroke-dasharray="2 2" vector-effect="non-scaling-stroke"/>
+            <path id="curvePath" d="M0 60 L100 0" stroke="#F0B640" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <div class="small" style="color:#9A8A60">Tone curve: how dark tones (left) through bright tones (right) are being changed</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+          <button type="button" class="btn ghost" id="edBefore">Hold to see original</button>
+          <button type="button" class="btn ghost" id="edReset">Reset</button>
+        </div>
+      </div>
+      <div class="panel" id="edPanel" style="margin-top:0"></div>
+    </div>
+
+    <h3>A simple editing order</h3>
+    <ol>
+      <li><strong>Crop and straighten.</strong> Fix the horizon, tighten the framing.</li>
+      <li><strong>Exposure.</strong> Get the overall brightness right.</li>
+      <li><strong>Highlights and shadows.</strong> Pull back bright skies, lift dark faces.</li>
+      <li><strong>Contrast.</strong> A little adds punch.</li>
+      <li><strong>White balance.</strong> Warmer or cooler to taste.</li>
+      <li><strong>Colour.</strong> Vibrance is gentler than saturation, especially on skin.</li>
+      <li><strong>Final touches.</strong> Spot-remove dust, light sharpening, noise reduction for high-ISO shots.</li>
+    </ol>
+    <div class="tip"><p><strong>The best editing advice:</strong> when you think it looks right, pull every slider back a little. Over-editing is the most common beginner mistake, and it dates a photo fast.</p></div>
+
+    <h3>Apps to start with</h3>
+    <p>Free: your phone's built-in editor, Snapseed, Darktable, RawTherapee, and your camera maker's own software. Paid: Adobe Lightroom, Capture One, DxO PhotoLab, Affinity Photo. Lightroom-style apps also organise your library, which matters more as it grows.</p>
+
+    <h3>Backing up</h3>
+    <p>Follow the <strong>3-2-1 rule</strong>: three copies of your photos, on two different kinds of storage, with one copy somewhere else (cloud, or a drive at a relative's house). Memory cards and single hard drives do fail.</p>
+  </div>
+</section>
+
+<section id="genres" data-title="Shooting guides" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Shooting guides</h2>
+    <p>Settings and habits for specific subjects. Tap one to open it.</p>
+
+    <details open><summary>Portraits</summary><div>
+      <p><strong>Mode:</strong> A/Av. <strong>Aperture:</strong> f/1.8–f/2.8 for one person, f/5.6–f/8 for groups. <strong>Lens:</strong> 50–135mm (full-frame equivalent). <strong>Focus:</strong> eye detection or a single point on the nearest eye.</p>
+      <ul><li>Put people in open shade or with the sun behind them, and bounce light back onto their face.</li><li>Keep distance between them and the background for blur.</li><li>Talk to them. Real expressions come between the posed shots.</li><li>Avoid cropping at joints (wrists, knees, ankles).</li></ul>
+    </div></details>
+
+    <details><summary>Landscapes</summary><div>
+      <p><strong>Mode:</strong> A/Av. <strong>Aperture:</strong> f/8–f/11. <strong>ISO:</strong> 100. <strong>Focus:</strong> about a third into the scene, or the hyperfocal distance from the <a href="#dof" data-go="dof">DoF calculator</a>.</p>
+      <ul><li>Shoot at golden hour; midday is flat.</li><li>Add foreground interest.</li><li>A tripod lets you keep low ISO and narrow apertures as the light fades.</li><li>A polarising filter deepens blue skies and cuts reflections on water.</li></ul>
+    </div></details>
+
+    <details><summary>Kids and pets</summary><div>
+      <p><strong>Mode:</strong> S/Tv at 1/500, or A/Av with Auto ISO and a 1/500 minimum. <strong>Focus:</strong> AF-C with eye/animal detection. <strong>Drive:</strong> continuous.</p>
+      <ul><li>Get down to their eye level.</li><li>Shoot during play, not posed. Hold a treat or toy right next to the lens.</li><li>A big window indoors beats flash every time.</li></ul>
+    </div></details>
+
+    <details><summary>Sport and action</summary><div>
+      <p><strong>Mode:</strong> S/Tv, or M with Auto ISO. <strong>Shutter:</strong> 1/1000 or faster for fast sport; 1/500 for running. <strong>Focus:</strong> AF-C, zone or tracking. <strong>Drive:</strong> high-speed continuous.</p>
+      <ul><li>Know the game so you can anticipate where the action goes.</li><li>Pre-focus on a spot where it will happen (the goal, the finish line).</li><li><strong>Panning:</strong> follow a moving subject at 1/30–1/60 for a sharp subject on a streaky background.</li></ul>
+    </div></details>
+
+    <details><summary>Wildlife and birds</summary><div>
+      <p><strong>Lens:</strong> 300mm or more. <strong>Shutter:</strong> 1/1000+ for small birds, 1/2000+ in flight. <strong>Mode:</strong> M with Auto ISO, or S. <strong>Focus:</strong> AF-C with animal detection.</p>
+      <ul><li>Early morning is best for activity and light.</li><li>Focus on the eye; a sharp eye makes the shot.</li><li>Be patient and quiet; let animals come to you, and never disturb nests.</li></ul>
+    </div></details>
+
+    <details><summary>Cities at night</summary><div>
+      <p><strong>Mode:</strong> M on a tripod. <strong>Settings:</strong> f/8, ISO 100, 2–15 seconds. <strong>Timer:</strong> 2s.</p>
+      <ul><li>Blue hour beats full darkness: the sky still has colour.</li><li>Long shutter speeds turn traffic into light trails.</li><li>No tripod? Brace on something solid, f/1.8, ISO 3200, 1/30.</li></ul>
+    </div></details>
+
+    <details><summary>Stars and the Milky Way</summary><div>
+      <p><strong>Settings:</strong> widest aperture (f/2.8 or wider is ideal), ISO 3200–6400, shutter from the <a href="#night" data-go="night">night sky calculator</a> (usually 10–25 seconds). Widest lens you have. Tripod essential.</p>
+      <ul><li>Go somewhere dark, away from city lights, with no moon.</li><li>Manual focus: use live view, magnify a bright star, turn until it's smallest.</li><li>Turn off long exposure noise reduction and stabilisation.</li></ul>
+    </div></details>
+
+    <details><summary>Fireworks</summary><div>
+      <p><strong>Settings:</strong> M, f/8–f/11, ISO 100, Bulb or 2–6 seconds. Manual focus on infinity. Tripod and remote release.</p>
+      <p>Open the shutter on the launch thump, close it after the burst. Stand upwind so the smoke blows away from you.</p>
+    </div></details>
+
+    <details><summary>Travel and street</summary><div>
+      <p><strong>Lens:</strong> 24–35mm (equivalent), or one small zoom. <strong>Mode:</strong> A/Av with Auto ISO, f/5.6–f/8.</p>
+      <ul><li>Mix wide scenes, medium shots of people, and close details (food, textures, signs) to tell the full story.</li><li>Zone focus for quick candid shots.</li><li>Be respectful: ask before close portraits, and follow local customs about photography.</li></ul>
+    </div></details>
+
+    <details><summary>Food</summary><div>
+      <p><strong>Light:</strong> a window to the side or behind the plate. <strong>Angle:</strong> straight above for flat dishes, about 45° for burgers and drinks. <strong>Aperture:</strong> f/2.8–f/5.6.</p>
+      <p>Turn off overhead lights to avoid mixed colours. A white card on the opposite side fills shadows.</p>
+    </div></details>
+
+    <details><summary>Close-ups and macro</summary><div>
+      <p><strong>Aperture:</strong> f/8–f/16, because depth of field is razor-thin up close. <strong>Focus:</strong> manual, then rock gently forward and back. Shoot several and keep the sharpest.</p>
+      <p>Wind ruins macro: shoot early in the morning, or block the breeze. No macro lens? Try extension tubes or a close-up filter.</p>
+    </div></details>
+
+    <details><summary>Indoor events and concerts</summary><div>
+      <p><strong>Lens:</strong> the brightest you own (an f/1.8 prime is ideal). <strong>Mode:</strong> A/Av or M with Auto ISO, shutter 1/125+, ISO up to 6400. <strong>Metering:</strong> spot or highlight-weighted for stage lights.</p>
+      <p>Use the silent shutter where allowed. Check whether cameras are permitted before you go.</p>
+    </div></details>
+
+    <details><summary>Products and things to sell online</summary><div>
+      <p>Soft window light, a plain white or neutral background (a sheet of card curved up behind the object), f/8, tripod, ISO 100, 2s timer. Show the item from several angles plus close-ups of any details or flaws.</p>
+    </div></details>
+  </div>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section id="playground" data-title="Exposure playground" data-group="practice">
+  <div class="wrap wide">
+    <p class="group-label">Practice</p>
+    <h2>Exposure playground</h2>
+    <p>Pick a mode and change the settings. Settings marked <em>camera sets</em> are chosen for you, just like a real camera in that mode.</p>
+    <div class="two-col">
       <div>
         <div class="viewer"><div id="simFilter">
-          <svg viewBox="0 0 400 250" role="img" aria-labelledby="simAlt">
-            <title id="simAlt">A simulated photo of a garden with a flower in front and a ball rolling past</title>
+          <svg viewBox="0 0 400 250" role="img" aria-label="Simulated photo of a garden with a flower and a rolling ball">
             <defs>
-              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
-                <stop id="skyTop" offset="0" stop-color="#7FB6E0"/>
-                <stop id="skyBot" offset="1" stop-color="#D5E9F5"/>
-              </linearGradient>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop id="skyTop" offset="0" stop-color="#7FB6E0"/><stop id="skyBot" offset="1" stop-color="#D5E9F5"/></linearGradient>
               <filter id="fBg" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="bgBlur" stdDeviation="2"/></filter>
               <filter id="fMove" x="-150%" y="-20%" width="400%" height="140%"><feGaussianBlur id="moveBlur" stdDeviation="0 0"/></filter>
               <filter id="fShake" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur id="shakeBlur" stdDeviation="0"/></filter>
@@ -286,15 +787,10 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
                 <ellipse cx="96" cy="200" rx="14" ry="6" fill="#4C8236" transform="rotate(-30 96 200)"/>
                 <g transform="translate(108 152)">
                   <g fill="#E0574A">
-                    <ellipse rx="9" ry="18" transform="rotate(0)" cy="-14"/>
-                    <ellipse rx="9" ry="18" transform="rotate(60)" cy="-14"/>
-                    <ellipse rx="9" ry="18" transform="rotate(120)" cy="-14"/>
-                    <ellipse rx="9" ry="18" transform="rotate(180)" cy="-14"/>
-                    <ellipse rx="9" ry="18" transform="rotate(240)" cy="-14"/>
-                    <ellipse rx="9" ry="18" transform="rotate(300)" cy="-14"/>
+                    <ellipse rx="9" ry="18" cy="-14"/><ellipse rx="9" ry="18" transform="rotate(60)" cy="-14"/><ellipse rx="9" ry="18" transform="rotate(120)" cy="-14"/>
+                    <ellipse rx="9" ry="18" transform="rotate(180)" cy="-14"/><ellipse rx="9" ry="18" transform="rotate(240)" cy="-14"/><ellipse rx="9" ry="18" transform="rotate(300)" cy="-14"/>
                   </g>
-                  <circle r="10" fill="#F2C14E"/>
-                  <circle r="4" fill="#B5832A"/>
+                  <circle r="10" fill="#F2C14E"/><circle r="4" fill="#B5832A"/>
                 </g>
               </g>
               <g filter="url(#fMove)">
@@ -306,662 +802,341 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
             </g>
           </svg>
         </div></div>
-
         <div class="lcd" id="lcd" aria-live="polite">
           <div class="lcd-row">
             <span class="mode" id="lcdMode">A</span>
-            <span class="val" id="lcdSh"><small>shutter</small>1/125</span>
-            <span class="val" id="lcdAp"><small>f</small>5.6</span>
-            <span class="val" id="lcdIso"><small>ISO</small>200</span>
+            <span class="val" id="lcdSh"></span><span class="val" id="lcdAp"></span><span class="val" id="lcdIso"></span>
           </div>
           <div class="meter" aria-hidden="true">
             <div class="meter-scale"><span>−3</span><span>−2</span><span>−1</span><span>0</span><span>+1</span><span>+2</span><span>+3</span></div>
             <div class="meter-track"><div class="meter-needle" id="needle"></div></div>
           </div>
         </div>
-        <p class="small" style="margin-top:8px">The line under the numbers is the camera's light meter. Centred on 0 means the camera thinks the brightness is right.</p>
+        <div class="histo" aria-hidden="true">
+          <svg viewBox="0 0 64 30" preserveAspectRatio="none"><path id="histPath" fill="#C9CED2" opacity=".85"/></svg>
+          <div class="row"><span id="clipL">shadows</span><span>histogram</span><span id="clipR">highlights</span></div>
+        </div>
       </div>
-
-      <div class="panel">
+      <div class="panel" style="margin-top:0">
         <div class="small">Mode</div>
         <div class="seg" id="modeSeg" role="group" aria-label="Shooting mode"></div>
         <div class="small" style="margin-top:6px">Light</div>
-        <div class="seg light" id="lightSeg" role="group" aria-label="Lighting"></div>
-
+        <div class="seg soft" id="lightSeg" role="group" aria-label="Lighting"></div>
         <div id="controls" style="margin-top:8px"></div>
-        <label class="check"><input type="checkbox" id="tripod"> Camera is on a tripod</label>
-
-        <ul id="feedback"></ul>
+        <label class="check" style="border-top:1px solid var(--line)"><input type="checkbox" id="tripod"> Camera is on a tripod</label>
+        <ul class="feedback" id="feedback"></ul>
       </div>
     </div>
-
-    <div class="tip" style="margin-top:22px"><p><strong>Try this:</strong> choose <strong>S</strong>, set the shutter to 1/1000, and watch the ball freeze while the camera opens the aperture to compensate. Then choose <strong>A</strong>, set f/1.4, and see the background melt away.</p></div>
-    <button class="next" data-go="modes">Next: the mode dial</button>
+    <div class="tip"><p><strong>Try this:</strong> choose S, set 1/1000, and watch the ball freeze while the camera opens the aperture. Then choose A at f/1.4 and watch the background melt. Then try Night in A mode and see what happens to the shutter speed.</p></div>
   </div>
 </section>
 
-<!-- MODES -->
-<section id="modes" data-title="Mode dial" hidden>
+<section id="quiz" data-title="Quiz" data-group="practice">
   <div class="wrap">
-    <h2>The mode dial</h2>
-    <p>The mode dial decides <strong>who makes which decision</strong>. Each step from Auto to M hands one more choice from the camera to you. Tap a mode to turn the dial.</p>
-
-    <div class="dial-area">
-      <div class="dial-box">
-        <div class="dial-pointer" aria-hidden="true"></div>
-        <div class="dial" id="dial"></div>
-        <div class="dial-hub" aria-hidden="true"></div>
-      </div>
-      <div id="mode-detail" class="panel" aria-live="polite"></div>
-    </div>
-
-    <h3>Which mode should a beginner use?</h3>
-    <p>Start in <strong>A (Av on Canon)</strong>. It's the mode most working photographers use day to day. You pick the aperture, which decides the look of the photo, and the camera handles the shutter speed. Glance at the shutter number now and then: if it drops below 1/60, raise the ISO.</p>
-    <p>Once that feels natural, try <strong>S</strong> for anything that moves, and <strong>M</strong> when the light isn't changing, like a sunset or a night scene on a tripod.</p>
-
-    <button class="next" data-go="lenses">Next: lenses and focal length</button>
+    <p class="group-label">Practice</p>
+    <h2>Quiz</h2>
+    <p>Twelve random questions from the whole course. See how much has stuck.</p>
+    <div class="panel" id="quizBox"></div>
   </div>
 </section>
 
-<!-- LENSES -->
-<section id="lenses" data-title="Lenses" hidden>
+<section id="challenges" data-title="30-day challenge" data-group="practice">
   <div class="wrap">
-    <h2>Focal length: how zoomed in you are</h2>
-    <p>Focal length is the number in millimetres on your lens, like 18–55mm or 50mm. <strong>Smaller number = wider view.</strong> Bigger number = closer, narrower view. Stand still and drag the slider.</p>
+    <p class="group-label">Practice</p>
+    <h2>30-day challenge</h2>
+    <p>One small assignment a day builds real skill faster than any amount of reading. Tick them off as you go; your progress is saved on this device.</p>
+    <div class="progress" style="margin:14px 0 6px"><div id="chalBar"></div></div>
+    <p class="small" id="chalCount"></p>
+    <ul class="chal" id="chalList"></ul>
+    <button type="button" class="btn ghost" id="chalReset" style="margin-top:16px">Clear all ticks</button>
+  </div>
+</section>
 
-    <div class="fl-view">
-      <svg id="flSvg" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A coastal scene with a lighthouse that zooms as the focal length changes">
-        <defs>
-          <linearGradient id="flSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E9FCF"/><stop offset="1" stop-color="#CBE3F1"/></linearGradient>
-          <linearGradient id="flSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D7FA3"/><stop offset="1" stop-color="#255E7E"/></linearGradient>
-        </defs>
-        <rect width="900" height="380" fill="url(#flSky)"/>
-        <circle cx="760" cy="110" r="40" fill="#FFF1BF"/>
-        <g fill="#FFFFFF" opacity=".85"><ellipse cx="160" cy="90" rx="70" ry="18"/><ellipse cx="210" cy="78" rx="44" ry="18"/><ellipse cx="600" cy="160" rx="60" ry="14"/></g>
-        <path d="M0 372 Q120 330 240 360 T520 352 T900 356 V380 H0Z" fill="#8FA9B6"/>
-        <rect y="370" width="900" height="230" fill="url(#flSea)"/>
-        <g stroke="#2D3940" stroke-width="2" fill="none"><path d="M120 160 q8 -8 16 0 q8 -8 16 0"/><path d="M680 230 q6 -6 12 0 q6 -6 12 0"/></g>
-        <g transform="translate(190 410)"><path d="M-22 10 H22 L14 20 H-14Z" fill="#7A3E2E"/><path d="M0 8 V-34 L20 6Z" fill="#F7F4EC"/><path d="M-2 8 V-26 L-16 6Z" fill="#E7D8B8"/></g>
-        <g transform="translate(720 450)"><path d="M-14 6 H14 L9 13 H-9Z" fill="#3B4A55"/><path d="M0 5 V-20 L12 4Z" fill="#F7F4EC"/></g>
-        <path d="M300 600 C330 470 370 400 410 384 L490 384 C530 400 570 470 610 600Z" fill="#5E7F4B"/>
-        <path d="M330 600 C350 520 380 450 410 420 L420 600Z" fill="#4D6B3D"/>
-        <rect x="425" y="372" width="50" height="14" rx="2" fill="#D9D2C2"/>
-        <polygon points="439,382 461,382 456,306 444,306" fill="#F6F4EE"/>
-        <polygon points="440.2,362 459.8,362 458.6,348 441.4,348" fill="#C8433A"/>
-        <polygon points="442.4,334 457.6,334 456.8,322 443.2,322" fill="#C8433A"/>
-        <rect x="447" y="352" width="6" height="9" fill="#3B4A55"/>
-        <rect x="439" y="300" width="22" height="5" fill="#2E3A40"/>
-        <g stroke="#2E3A40" stroke-width=".6"><line x1="440" y1="300" x2="440" y2="296"/><line x1="445" y1="300" x2="445" y2="296"/><line x1="455" y1="300" x2="455" y2="296"/><line x1="460" y1="300" x2="460" y2="296"/><line x1="439" y1="296" x2="461" y2="296"/></g>
-        <rect x="444" y="288" width="12" height="12" fill="#FFE07A" stroke="#2E3A40" stroke-width="1"/>
-        <line x1="450" y1="288" x2="450" y2="300" stroke="#2E3A40" stroke-width=".7"/>
-        <polygon points="442,288 458,288 450,279" fill="#C8433A"/>
-        <circle cx="450" cy="278.5" r="1" fill="#2E3A40"/>
-        <g transform="translate(457.5 294.5)">
-          <ellipse cx="0" cy="0" rx="2.6" ry="1.5" fill="#FFFFFF"/>
-          <path d="M-2.4 -.3 L-4.2 -1.2 L-2.6 .6Z" fill="#7C8A92"/>
-          <circle cx="2.2" cy="-1.3" r="1" fill="#FFFFFF"/>
-          <path d="M3 -1.4 L4.3 -1.1 L3 -.9Z" fill="#F0A030"/>
-          <circle cx="2.5" cy="-1.5" r=".22" fill="#111"/>
-          <line x1="-.4" y1="1.4" x2="-.4" y2="1.6" stroke="#F0A030" stroke-width=".3"/>
-          <line x1=".5" y1="1.4" x2=".5" y2="1.6" stroke="#F0A030" stroke-width=".3"/>
-        </g>
-        <path d="M0 540 Q200 505 360 560 L360 600 H0Z" fill="#E6D3A6"/>
-        <path d="M640 600 Q760 520 900 530 V600Z" fill="#E6D3A6"/>
-        <g transform="translate(110 545)"><line x1="0" y1="0" x2="0" y2="-60" stroke="#5A4636" stroke-width="3"/><path d="M-46 -54 Q0 -92 46 -54Z" fill="#E0574A"/><path d="M-16 -66 Q0 -92 16 -66Z" fill="#F7F4EC"/></g>
+<!-- ================= TOOLS ================= -->
+<section id="dof" data-title="Depth of field calculator" data-group="tools">
+  <div class="wrap">
+    <p class="group-label">Tools</p>
+    <h2>Depth of field calculator</h2>
+    <p>Find out how much of your scene will be sharp, from front to back.</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="dofSensor">Sensor</label>
+          <select id="dofSensor"><option value="0.03">Full frame / 35mm film</option><option value="0.02" selected>APS-C</option><option value="0.015">Micro Four Thirds</option><option value="0.05">Medium format 6×6</option></select></div>
+        <div><label class="field" for="dofF">Focal length (mm)</label><input type="number" id="dofF" value="50" min="4" max="800" inputmode="numeric"></div>
+        <div><label class="field" for="dofN">Aperture</label>
+          <select id="dofN"><option>1.4</option><option selected>1.8</option><option>2</option><option>2.8</option><option>4</option><option>5.6</option><option>8</option><option>11</option><option>16</option><option>22</option></select></div>
+        <div><label class="field" for="dofD">Subject distance (m)</label><input type="number" id="dofD" value="2" min="0.1" step="0.1" inputmode="decimal"></div>
+      </div>
+      <div class="lcd" style="margin-top:16px">
+        <div class="lcd-row">
+          <span><span class="lab">sharp from</span><span class="big" id="dofNear"></span></span>
+          <span><span class="lab">to</span><span class="big" id="dofFar"></span></span>
+          <span><span class="lab">total</span><span class="big" id="dofTot"></span></span>
+        </div>
+      </div>
+      <svg viewBox="0 0 300 44" style="width:100%;display:block;margin-top:10px" aria-hidden="true">
+        <line x1="10" y1="22" x2="290" y2="22" stroke="var(--line)" stroke-width="2"/>
+        <rect id="dofZone" x="0" y="14" width="0" height="16" rx="3" fill="var(--amber)" opacity=".55"/>
+        <circle id="dofSubj" cx="0" cy="22" r="5" fill="var(--ink)"/>
+        <text x="10" y="42" font-size="9" fill="var(--muted)">camera</text>
+        <text id="dofScaleEnd" x="290" y="42" font-size="9" fill="var(--muted)" text-anchor="end"></text>
       </svg>
+      <p id="dofHyper" class="small" style="margin:10px 0 0"></p>
     </div>
-
-    <input id="flRange" type="range" min="0" max="12" step="1" value="5" aria-label="Focal length">
-    <div class="fl-read">
-      <span class="big" id="flMm">50mm</span>
-      <span id="flKind"></span>
-    </div>
-    <p class="small" id="flAngle"></p>
-    <label class="check"><input type="checkbox" id="crop"> My camera has a smaller APS-C sensor (most entry-level DSLRs and mirrorless)</label>
-    <p id="flUse"></p>
-
-    <h3>Crop sensors, in one paragraph</h3>
-    <p>Most beginner cameras have a sensor smaller than a frame of 35mm film. It sees only the middle of what the lens projects, so every lens looks more zoomed in: about 1.5× on Nikon, Sony and Fujifilm, 1.6× on Canon. A 50mm lens on these cameras frames like a 75–80mm. Film cameras and "full-frame" digital cameras have no crop.</p>
-
-    <h3>Zoom lenses and prime lenses</h3>
-    <div class="grid2">
-      <div class="panel"><strong>Zoom</strong> (e.g. 18–55mm, 70–300mm)<p class="small" style="margin:6px 0 0">One lens covers many focal lengths. Flexible and convenient. Usually doesn't open as wide, so it needs more light.</p></div>
-      <div class="panel"><strong>Prime</strong> (e.g. 35mm, 50mm f/1.8)<p class="small" style="margin:6px 0 0">One fixed focal length; you zoom with your feet. Usually sharper and opens much wider. A 50mm f/1.8 is the best-value upgrade for most beginners.</p></div>
-    </div>
-
-    <h3>Reading what's written on a lens</h3>
-    <p><strong>18–55mm 1:3.5–5.6</strong> means it zooms from 18 to 55mm, and its widest aperture is f/3.5 at 18mm, shrinking to f/5.6 when zoomed in. <strong>50mm 1:1.8</strong> is a prime that opens to f/1.8. Letters like IS, VR, OSS or OIS mean built-in image stabilisation, which helps you hold slower shutter speeds by hand.</p>
-
-    <h3>Focal length and faces</h3>
-    <p>Wide lenses up close stretch features: noses look bigger, foreheads bulge. For flattering portraits, step back and use 50–135mm. It isn't the lens itself causing distortion; it's how close you are standing.</p>
-
-    <button class="next" data-go="settings">Next: other settings explained</button>
+    <p class="small">"Sharp" means sharp enough on a normal-sized print or screen. Zooming to 100% on a computer will always look stricter.</p>
   </div>
 </section>
 
-<!-- SETTINGS -->
-<section id="settings" data-title="Settings" hidden>
+<section id="exposure" data-title="Exposure and ND calculator" data-group="tools">
   <div class="wrap">
-    <h2>Other settings, in plain English</h2>
-    <p>Menus are full of abbreviations. These are the ones that actually matter. Tap any one to open it.</p>
-
-    <details open><summary>Exposure compensation (+/− button)</summary><div>
-      <p>Tells the camera "brighter than you think" or "darker than you think" in P, A, S and Auto ISO. It's measured in stops: +1 is twice as bright.</p>
-      <p>Cameras try to make everything medium grey, so <strong>snow and white beaches come out dull</strong> (use +1) and <strong>dark scenes or sunsets come out washed out</strong> (use −0.7 to −1). Remember to set it back to 0 afterwards.</p>
-    </div></details>
-
-    <details><summary>Focus modes: AF-S, AF-C, MF</summary><div>
-      <dl class="kv">
-        <dt>AF-S / One Shot</dt><dd>Focuses once when you half-press the shutter, then locks. For things that stay still: people posing, landscapes, food.</dd>
-        <dt>AF-C / AI Servo</dt><dd>Keeps refocusing while you hold the half-press. For anything moving: kids, pets, sport, birds.</dd>
-        <dt>AF-A / AI Focus</dt><dd>The camera guesses which of the two you need. Fine to start with, but less predictable.</dd>
-        <dt>MF</dt><dd>Manual focus: you turn the focus ring yourself. Useful in the dark, through glass, or for close-ups. Turn on "focus peaking" if your camera has it.</dd>
-      </dl>
-      <div class="tip"><p><strong>Half-press:</strong> press the shutter button halfway to focus and measure light, then press fully to take the photo. This one habit fixes most blurry pictures.</p></div>
-    </div></details>
-
-    <details><summary>Focus points and areas</summary><div>
-      <p>Your camera can focus on many spots in the frame. If you leave it on automatic area, it usually picks whatever is closest, which isn't always what you wanted. Switch to a <strong>single point</strong> and move it onto your subject, or turn on <strong>eye detection</strong> for people and animals if your camera has it.</p>
-    </div></details>
-
-    <details><summary>Metering: matrix, centre-weighted, spot</summary><div>
-      <dl class="kv">
-        <dt>Matrix / Evaluative / Multi</dt><dd>Measures the whole frame and makes a smart guess. Leave it here most of the time.</dd>
-        <dt>Centre-weighted</dt><dd>Pays most attention to the middle. How most older film cameras measure light.</dd>
-        <dt>Spot</dt><dd>Measures a tiny area. Useful for a person on stage under a spotlight, or someone against a bright window.</dd>
-      </dl>
-    </div></details>
-
-    <details><summary>White balance (WB)</summary><div>
-      <p>Different light has different colours: indoor bulbs are orange, shade is blue. White balance corrects this so white things look white. <strong>Auto (AWB)</strong> works well most of the time. Try <em>Daylight</em> or <em>Cloudy</em> at sunset to keep warm, golden colours instead of having them "corrected" away.</p>
-      <p class="small">Film doesn't have white balance. Normal colour film is made for daylight, which is why old indoor photos look orange.</p>
-    </div></details>
-
-    <details><summary>Auto ISO</summary><div>
-      <p>Lets the camera raise ISO only when it needs to. Paired with A or S mode, it's a great beginner setup. In the menu, set a <strong>maximum ISO</strong> (3200 or 6400 is sensible) and a <strong>minimum shutter speed</strong> (1/125 for people, 1/500 for kids and pets).</p>
-    </div></details>
-
-    <details><summary>Drive mode: single, continuous, self-timer</summary><div>
-      <p><strong>Single</strong> takes one photo per press. <strong>Continuous</strong> keeps shooting while you hold the button: great for action, then pick the best frame. <strong>Self-timer</strong> (2s or 10s) stops you shaking a camera on a tripod, or lets you get in the photo.</p>
-    </div></details>
-
-    <details><summary>RAW vs JPEG</summary><div>
-      <p><strong>JPEG</strong> files are finished photos, small and ready to share. <strong>RAW</strong> files hold everything the sensor saw, so you can fix brightness and colour much more later, but they need editing software (Lightroom, Capture One, or the free Darktable or your camera maker's app).</p>
-      <p>Not sure? Choose <strong>RAW + JPEG</strong>. You get a photo ready to share, plus a safety net for the special ones.</p>
-    </div></details>
-
-    <details><summary>Image stabilisation (IS, VR, OSS, IBIS)</summary><div>
-      <p>Counteracts your hands shaking so you can use slower shutter speeds by hand. Leave it on, except when the camera is on a tripod, where some older systems can actually add blur. Stabilisation doesn't freeze a moving subject; only a fast shutter does that.</p>
-    </div></details>
-
-    <details><summary>The histogram</summary><div>
-      <p>The little mountain graph on your screen shows how many parts of the photo are dark (left) through bright (right). If it's crammed against the right edge, highlights are lost to pure white. Crammed to the left, shadows are lost to black. It's more trustworthy than the screen, which can look brighter or darker depending on the room you're in.</p>
-    </div></details>
-
-    <details><summary>Flash</summary><div>
-      <p>The pop-up flash fires straight at people, which looks flat and harsh. Try raising ISO and opening the aperture first. If you do need flash, it's most useful outdoors in bright sun, to fill in dark shadows under hats and eyes. An add-on flash you can point at the ceiling ("bouncing") looks far more natural.</p>
-    </div></details>
-
-    <button class="next" data-go="film">Next: shooting film</button>
-  </div>
-</section>
-
-<!-- FILM -->
-<section id="film" data-title="Film" hidden>
-  <div class="wrap">
-    <h2>Shooting film</h2>
-    <p>Film cameras work on exactly the same three controls. The big differences: ISO is fixed by the roll you load, you can't check your shots until they're developed, and many older cameras leave every decision to you.</p>
-
-    <h3>Choosing film</h3>
-    <dl class="kv">
-      <dt>ISO 100–200</dt><dd>Bright sunny days. Fine grain, rich colour.</dd>
-      <dt>ISO 400</dt><dd>The all-rounder. Sun, cloud, shade and bright indoors. Best choice for a first roll.</dd>
-      <dt>ISO 800–3200</dt><dd>Dim light and night. More grain, which many people love.</dd>
-      <dt>Colour negative</dt><dd>The usual kind. Very forgiving: it handles overexposure well, so if unsure, give it more light rather than less.</dd>
-      <dt>Black and white</dt><dd>Forgiving too, and a good way to learn about light without colour distracting you.</dd>
-      <dt>Slide film (E-6)</dt><dd>Gorgeous colours but very strict about exposure. Save it for once you're confident.</dd>
-    </dl>
-    <p class="small"><strong>35mm</strong> is the common small roll (24 or 36 shots). <strong>120</strong> is wider "medium format" film used by bigger cameras, with 8–16 shots per roll.</p>
-
-    <h3>Loading a 35mm camera</h3>
-    <ol>
-      <li>Open the back in shade, not direct sun. Pull up the rewind knob to open it on most cameras.</li>
-      <li>Drop the canister in on the left, push the rewind knob back down.</li>
-      <li>Pull the film leader across and tuck it into a slot on the take-up spool on the right. Make sure the sprocket holes sit on the teeth.</li>
-      <li>Wind on and press the shutter once, then close the back.</li>
-      <li>Wind and fire twice more until the counter reads 1.</li>
-      <li><strong>Check it's actually loaded:</strong> as you wind, the rewind knob should turn. If it doesn't, the film isn't moving.</li>
-      <li>Set the film's ISO on the camera's ISO/ASA dial, if it has one, so the light meter is accurate. Modern cameras read it automatically from the canister.</li>
-    </ol>
-
-    <h3>Finishing a roll</h3>
-    <p>When the lever won't wind any further, <strong>don't open the back.</strong> Press the small rewind release button (usually on the bottom), then turn the rewind crank until you feel it go slack. Now it's safe to open. Opening early will expose and ruin the film.</p>
-
-    <h3>The light meter</h3>
-    <p>Many film cameras have a built-in meter shown as a needle or small lights in the viewfinder. Change the aperture or shutter until it sits in the middle or the green light shows. Most need a small battery, so if nothing moves, check that first. Some very old cameras were designed for mercury batteries that aren't made any more; adapters and substitute cells exist.</p>
-    <p>No meter, or not sure it works? Use a free light meter app on your phone, or the Sunny 16 rule below.</p>
-
-    <h3>The Sunny 16 rule</h3>
-    <p>On a sunny day, set the aperture to f/16 and the shutter to 1 over your film's ISO. Then adjust for the weather. Try it:</p>
-    <div class="panel s16">
-      <label for="s16Iso">Film ISO</label>
-      <select id="s16Iso"><option value="100">100</option><option value="200">200</option><option value="400" selected>400</option><option value="800">800</option></select>
-      <label for="s16Light">The light right now</label>
-      <select id="s16Light">
-        <option value="22">Bright sun on snow or sand</option>
-        <option value="16" selected>Sunny, sharp shadows</option>
-        <option value="11">Hazy sun, soft shadows</option>
-        <option value="8">Cloudy, barely any shadows</option>
-        <option value="5.6">Heavy overcast</option>
-        <option value="4">Open shade or sunset</option>
-      </select>
-      <div class="s16-out" id="s16Out" aria-live="polite"></div>
+    <p class="group-label">Tools</p>
+    <h2>Exposure and ND calculator</h2>
+    <h3 style="margin-top:12px">Swap settings, keep the brightness</h3>
+    <p>Enter what the camera metered, then change the aperture or ISO. The tool gives you the shutter speed that keeps the same exposure.</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="exA1">Metered aperture</label><select id="exA1"></select></div>
+        <div><label class="field" for="exS1">Metered shutter</label><select id="exS1"></select></div>
+        <div class="full"><label class="field" for="exI1">Metered ISO</label><select id="exI1"></select></div>
+        <div><label class="field" for="exA2">New aperture</label><select id="exA2"></select></div>
+        <div><label class="field" for="exI2">New ISO</label><select id="exI2"></select></div>
+      </div>
+      <div class="lcd" style="margin-top:16px"><span class="lab">new shutter speed</span><span class="big" id="exOut"></span></div>
+      <p class="small" id="exNote" style="margin:10px 0 0"></p>
     </div>
 
-    <h3>Manual focus on film cameras</h3>
-    <p>Many film SLRs have a <strong>split-image circle</strong> in the middle of the viewfinder. Line it up on an edge, like a doorframe or someone's eyes, and turn the focus ring until the two halves join up. Rangefinder cameras do something similar with a ghost image you overlap.</p>
-
-    <h3>Getting it developed</h3>
-    <p>Any photo lab that does film can develop and scan it for you, usually within a week. Ask for scans to be emailed. Keep your negatives somewhere cool and dry; they're your originals.</p>
-
-    <div class="tip"><p><strong>Checking a second-hand film camera:</strong> open the back, set the slowest shutter speed and fire it while looking through. It should open and close cleanly. Then try a fast speed. Check the lens for haze or fungus with a torch, and that the aperture blades are dry and snappy, not oily.</p></div>
-
-    <button class="next" data-go="tips">Next: taking better photos</button>
+    <h3>Neutral density (ND) filters</h3>
+    <p>ND filters are dark glass that cut light, so you can use slow shutters in daylight for silky water and blurred crowds.</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="ndBase">Shutter without filter</label><select id="ndBase"></select></div>
+        <div><label class="field" for="ndStops">Filter</label>
+          <select id="ndStops"><option value="1">ND2 (1 stop)</option><option value="2">ND4 (2 stops)</option><option value="3" selected>ND8 (3 stops)</option><option value="4">ND16 (4 stops)</option><option value="6">ND64 (6 stops)</option><option value="10">ND1000 (10 stops)</option><option value="15">ND32000 (15 stops)</option></select></div>
+      </div>
+      <div class="lcd" style="margin-top:16px"><span class="lab">shutter with filter</span><span class="big" id="ndOut"></span></div>
+      <p class="small" style="margin:10px 0 0">Compose and focus before attaching a strong ND, because the viewfinder goes almost black. On DSLRs, cover the eyepiece during long exposures to stop light leaking in.</p>
+    </div>
   </div>
 </section>
 
-<!-- TIPS -->
-<section id="tips" data-title="Better photos" hidden>
+<section id="sunny16" data-title="Sunny 16 helper" data-group="tools">
   <div class="wrap">
-    <h2>Taking better photos</h2>
-    <p>Settings get a photo technically right. These habits make it worth looking at.</p>
-
-    <div class="def"><h3>Look at the light first</h3><p>The hour after sunrise and before sunset (<strong>golden hour</strong>) gives soft, warm light that flatters everything. Harsh midday sun makes squinting faces and hard shadows; move people into shade. Side light shows texture; light from behind makes glowing outlines.</p></div>
-    <div class="def"><h3>Get closer</h3><p>Most beginner photos have too much empty space. Fill the frame with what you care about. If it doesn't feel too close, take a step in.</p></div>
-    <div class="def"><h3>Use the rule of thirds</h3><p>Imagine the frame split into a 3×3 grid (turn on grid lines in your camera's menu). Put your subject or the horizon along those lines instead of dead centre. It's a guide, not a law: symmetry belongs in the centre.</p></div>
-    <div class="def"><h3>Check the edges and the background</h3><p>Before you press, glance around the frame. Poles growing out of heads, bins, half a stranger, a bright sign: move a step sideways and most of them disappear.</p></div>
-    <div class="def"><h3>Focus on the eyes</h3><p>For people and animals, the nearest eye should be sharpest. If the eyes are sharp, the photo feels sharp.</p></div>
-    <div class="def"><h3>Change your height</h3><p>Crouch to the eye level of kids and pets. Shoot from low to make things look grand, from above for food and patterns.</p></div>
-    <div class="def"><h3>Use lines to lead the eye</h3><p>Roads, fences, rivers and shorelines pull the viewer into the picture. Point them towards your subject.</p></div>
-    <div class="def"><h3>Hold the camera steady</h3><p>Elbows tucked in, left hand under the lens, look through the viewfinder rather than holding the camera at arm's length. Breathe out, then press gently. Keep the shutter at least as fast as 1 over your focal length: 1/50 at 50mm, 1/200 at 200mm.</p></div>
-    <div class="def"><h3>Keep the horizon straight</h3><p>A tilted sea or skyline is the easiest mistake to spot and the easiest to fix. The grid lines help here too.</p></div>
-    <div class="def"><h3>Take more, then choose</h3><p>Professionals keep a small fraction of what they shoot. Try a few angles, step closer, wait for the moment. Then be ruthless about which ones you share.</p></div>
-
-    <h3>A two-week practice plan</h3>
-    <p class="small">One small exercise a day builds real skill faster than reading.</p>
+    <p class="group-label">Tools</p>
+    <h2>Sunny 16 helper</h2>
+    <p>No light meter? On a sunny day, set f/16 and a shutter of 1 over your ISO, then adjust for the weather. Pick your conditions:</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="s16Iso">ISO</label><select id="s16Iso"><option>50</option><option>100</option><option>200</option><option selected>400</option><option>800</option><option>1600</option></select></div>
+        <div><label class="field" for="s16Light">The light right now</label>
+          <select id="s16Light">
+            <option value="22">Bright sun on snow or sand</option><option value="16" selected>Sunny, sharp shadows</option><option value="11">Hazy sun, soft shadows</option>
+            <option value="8">Cloudy, barely any shadows</option><option value="5.6">Heavy overcast</option><option value="4">Open shade or sunset</option>
+          </select></div>
+      </div>
+      <div id="s16Out" aria-live="polite" style="margin-top:14px"></div>
+    </div>
+    <h3>Rough guide for other light</h3>
     <div class="table-scroll"><table>
-      <thead><tr><th>Days</th><th>Exercise</th></tr></thead>
+      <thead><tr><th>Scene</th><th>At ISO 400, try</th></tr></thead>
       <tbody>
-        <tr><td>1–2</td><td>Shoot one object at f/1.8 (or your widest) and f/11. Compare the backgrounds.</td></tr>
-        <tr><td>3–4</td><td>Photograph moving water or traffic at 1/1000, 1/60 and 1/4.</td></tr>
-        <tr><td>5–6</td><td>Take the same indoor shot at ISO 200, 1600 and 6400. Zoom in on the noise.</td></tr>
-        <tr><td>7–8</td><td>Spend a day in A mode only. Note when the shutter speed gets too slow.</td></tr>
-        <tr><td>9–10</td><td>Use one focal length all day. Zoom with your feet.</td></tr>
-        <tr><td>11–12</td><td>Go out at golden hour and at midday. Compare the light.</td></tr>
-        <tr><td>13–14</td><td>Shoot a full scene in M mode, using the meter to guide you.</td></tr>
+        <tr><td>Bright room near a window</td><td>f/2.8, 1/60</td></tr>
+        <tr><td>Normal home lighting</td><td>f/2, 1/30</td></tr>
+        <tr><td>Floodlit sports field at night</td><td>f/2.8, 1/60 (or push film to 1600 and use 1/250)</td></tr>
+        <tr><td>Brightly lit city street at night</td><td>f/2, 1/30</td></tr>
+        <tr><td>Fireworks</td><td>f/16, 1–4 seconds</td></tr>
+        <tr><td>The full moon itself</td><td>f/11, 1/400 ("Looney 11": f/11 at 1 over ISO)</td></tr>
       </tbody>
     </table></div>
-
-    <button class="next" data-go="cheat">Next: the cheat sheet</button>
   </div>
 </section>
 
-<!-- CHEAT -->
-<section id="cheat" data-title="Cheat sheet" hidden>
+<section id="night" data-title="Night sky calculator" data-group="tools">
   <div class="wrap">
+    <p class="group-label">Tools</p>
+    <h2>Night sky calculator</h2>
+    <p>The earth turns, so stars smear into short lines if the shutter stays open too long. This works out the longest shutter for sharp, pin-point stars.</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="npfSensor">Sensor</label>
+          <select id="npfSensor"><option value="1|36">Full frame</option><option value="1.5|23.5" selected>APS-C (Nikon, Sony, Fuji)</option><option value="1.6|22.3">APS-C (Canon)</option><option value="2|17.3">Micro Four Thirds</option></select></div>
+        <div><label class="field" for="npfMp">Megapixels</label><input type="number" id="npfMp" value="24" min="6" max="100" inputmode="numeric"></div>
+        <div><label class="field" for="npfF">Focal length (mm)</label><input type="number" id="npfF" value="16" min="6" max="200" inputmode="numeric"></div>
+        <div><label class="field" for="npfN">Aperture</label><select id="npfN"><option>1.4</option><option>1.8</option><option>2</option><option selected>2.8</option><option>4</option><option>5.6</option></select></div>
+      </div>
+      <div class="lcd" style="margin-top:16px">
+        <div class="lcd-row">
+          <span><span class="lab">sharp stars (NPF rule)</span><span class="big" id="npfOut"></span></span>
+          <span><span class="lab">500 rule (looser)</span><span class="big" id="r500Out"></span></span>
+        </div>
+      </div>
+      <p class="small" style="margin:10px 0 0">Start at ISO 3200 with this shutter speed, check the photo, and adjust ISO. The 500 rule is the old quick method; it allows slight trailing on modern high-resolution sensors.</p>
+    </div>
+    <h3>Checklist for a night out</h3>
+    <ul><li>Tripod, remote or 2s timer, spare batteries (cold drains them fast).</li><li>Head torch with a red-light mode to keep your night vision.</li><li>Check the moon phase and cloud forecast; new moon is darkest.</li><li>Turn screen brightness down, and turn off stabilisation and long exposure noise reduction.</li><li>Focus manually on a bright star using magnified live view.</li></ul>
+  </div>
+</section>
+
+<section id="reciprocity" data-title="Film reciprocity calculator" data-group="tools">
+  <div class="wrap">
+    <p class="group-label">Tools</p>
+    <h2>Film reciprocity calculator</h2>
+    <p>In very long exposures, film becomes less sensitive, so it needs more time than the meter says. This uses Ilford's published formula for their black and white films.</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="recFilm">Film</label>
+          <select id="recFilm"><option value="1.31">Ilford HP5 Plus</option><option value="1.26">Ilford FP4 Plus</option><option value="1.33">Ilford Pan F Plus</option><option value="1.26">Ilford Delta 100</option><option value="1.41">Ilford Delta 400</option><option value="1.33">Ilford Delta 3200</option><option value="1.43">Ilford SFX 200</option><option value="1.31">Ilford XP2 Super</option></select></div>
+        <div><label class="field" for="recT">Metered time (seconds)</label><input type="number" id="recT" value="4" min="0.1" step="0.5" inputmode="decimal"></div>
+      </div>
+      <div class="lcd" style="margin-top:16px"><span class="lab">expose for</span><span class="big" id="recOut"></span></div>
+      <p class="small" style="margin:10px 0 0">No correction is needed for metered times of half a second or less. Factors here are approximate; check Ilford's data sheet for your film. Colour films vary: Kodak Portra and Ektar need little correction up to about 1 second.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REFERENCE ================= -->
+<section id="cheat" data-title="Cheat sheet" data-group="ref">
+  <div class="wrap">
+    <p class="group-label">Reference</p>
     <h2>Cheat sheet</h2>
     <p>Starting points, not rules. Take a shot, check it, adjust.</p>
     <div class="table-scroll"><table>
       <thead><tr><th>Situation</th><th>Mode</th><th>Starting settings</th><th>Remember</th></tr></thead>
       <tbody>
         <tr><td>Portrait outdoors</td><td>A / Av</td><td>f/1.8–f/4, ISO 100–400, 50–85mm</td><td>Focus on the nearest eye. Put people in shade.</td></tr>
-        <tr><td>Group photo</td><td>A / Av</td><td>f/5.6–f/8, ISO 200–800</td><td>Narrower aperture keeps every row sharp.</td></tr>
-        <tr><td>Landscape</td><td>A / Av</td><td>f/8–f/11, ISO 100</td><td>Tripod at dawn and dusk. Straight horizon.</td></tr>
-        <tr><td>Kids, pets, sport</td><td>S / Tv</td><td>1/500–1/1000, Auto ISO</td><td>AF-C focus plus continuous drive.</td></tr>
-        <tr><td>Indoors, no flash</td><td>A / Av</td><td>Widest aperture, ISO 1600–3200</td><td>Keep the shutter at 1/60 or faster.</td></tr>
-        <tr><td>Sunset</td><td>A / Av</td><td>f/8, ISO 100, exposure comp −0.7</td><td>White balance to Daylight for warm colour.</td></tr>
-        <tr><td>Snow or beach</td><td>A / Av</td><td>f/8, ISO 100, exposure comp +1</td><td>Stops white turning grey.</td></tr>
-        <tr><td>City at night</td><td>M</td><td>f/8, 2–10 seconds, ISO 100</td><td>Tripod and 2s self-timer.</td></tr>
-        <tr><td>Silky waterfall</td><td>S / Tv or M</td><td>1/2–2 seconds, f/11–f/16, ISO 100</td><td>Tripod. Overcast days are easiest.</td></tr>
-        <tr><td>Fireworks</td><td>M or B</td><td>f/8–f/11, ISO 100, 2–6 seconds</td><td>Manual focus on infinity, tripod.</td></tr>
-        <tr><td>Close-ups of flowers</td><td>A / Av</td><td>f/5.6–f/8, ISO 200–400</td><td>Very little is in focus up close, so stop down.</td></tr>
-        <tr><td>Film, sunny day</td><td>M</td><td>f/16 at 1/ISO (e.g. 1/500 on ISO 400)</td><td>When unsure, overexpose colour negative.</td></tr>
+        <tr><td>Group photo</td><td>A / Av</td><td>f/5.6–f/8, ISO 200–800</td><td>Keeps every row sharp.</td></tr>
+        <tr><td>Landscape</td><td>A / Av</td><td>f/8–f/11, ISO 100</td><td>Tripod at dawn and dusk.</td></tr>
+        <tr><td>Kids, pets, sport</td><td>S / Tv</td><td>1/500–1/1000, Auto ISO</td><td>AF-C plus continuous drive.</td></tr>
+        <tr><td>Birds in flight</td><td>M + Auto ISO</td><td>1/2000, f/5.6–f/8</td><td>Zone AF, animal eye detection.</td></tr>
+        <tr><td>Indoors, no flash</td><td>A / Av</td><td>Widest aperture, ISO 1600–3200</td><td>Shutter 1/60 or faster.</td></tr>
+        <tr><td>Sunset</td><td>A / Av</td><td>f/8, ISO 100, comp −0.7</td><td>WB to Daylight for warmth.</td></tr>
+        <tr><td>Snow or beach</td><td>A / Av</td><td>f/8, ISO 100, comp +1</td><td>Stops white turning grey.</td></tr>
+        <tr><td>City at night</td><td>M</td><td>f/8, 2–10s, ISO 100</td><td>Tripod and 2s timer.</td></tr>
+        <tr><td>Milky Way</td><td>M</td><td>f/2.8, 15–20s, ISO 3200–6400</td><td>Dark site, no moon, focus on a star.</td></tr>
+        <tr><td>Silky waterfall</td><td>S / Tv or M</td><td>1/2–2s, f/11–f/16, ISO 100</td><td>Tripod, ND filter in daylight.</td></tr>
+        <tr><td>Panning</td><td>S / Tv</td><td>1/30–1/60</td><td>Follow the subject smoothly.</td></tr>
+        <tr><td>Fireworks</td><td>M or B</td><td>f/8–f/11, ISO 100, 2–6s</td><td>Focus on infinity, tripod.</td></tr>
+        <tr><td>Flowers close up</td><td>A / Av</td><td>f/5.6–f/11, ISO 200–400</td><td>Shoot when there's no wind.</td></tr>
+        <tr><td>Concert</td><td>M + Auto ISO</td><td>f/1.8–f/2.8, 1/250</td><td>Spot or highlight metering.</td></tr>
+        <tr><td>Film, sunny day</td><td>M</td><td>f/16 at 1/ISO</td><td>When unsure, overexpose colour negative.</td></tr>
       </tbody>
     </table></div>
+  </div>
+</section>
 
-    <h3>When something goes wrong</h3>
+<section id="trouble" data-title="Troubleshooting" data-group="ref">
+  <div class="wrap">
+    <p class="group-label">Reference</p>
+    <h2>Troubleshooting</h2>
     <dl class="kv">
       <dt>Everything is blurry</dt><dd>Shutter too slow for your hands. Raise ISO or open the aperture so the shutter gets faster.</dd>
-      <dt>The background is sharp but the person is soft</dt><dd>The camera focused on the wrong thing. Use a single focus point on the eye.</dd>
-      <dt>The moving subject is smeared</dt><dd>Use S mode at 1/500 or faster, and AF-C focus.</dd>
-      <dt>Photos are too dark or too bright</dt><dd>Use exposure compensation, or check the meter in M mode.</dd>
-      <dt>Grainy, speckled photos</dt><dd>ISO is high. Find more light, open the aperture, or accept it; a grainy sharp photo beats a clean blurry one.</dd>
-      <dt>The sky is pure white</dt><dd>It's much brighter than the ground. Use −0.7 exposure comp, or put the sun behind you.</dd>
-      <dt>Orange indoor photos</dt><dd>Set white balance to Auto or Tungsten.</dd>
+      <dt>The background is sharp but the person isn't</dt><dd>Wrong focus point. Use a single point on the eye, or turn on eye detection.</dd>
+      <dt>Moving subjects are smeared</dt><dd>S mode at 1/500 or faster, with AF-C.</dd>
+      <dt>Too dark or too bright</dt><dd>Exposure compensation, or check the meter in M mode.</dd>
+      <dt>Grainy, speckled photos</dt><dd>High ISO. Find more light, open the aperture, or accept it.</dd>
+      <dt>Sky is pure white</dt><dd>Use −0.7 exposure compensation, put the sun behind you, or use a graduated filter.</dd>
+      <dt>Orange indoor photos</dt><dd>White balance to Auto or Tungsten.</dd>
+      <dt>Dark spots in the same place on every photo</dt><dd>Dust on the sensor, most visible at f/11 and above. See <a href="#care" data-go="care">Care and cleaning</a>.</dd>
+      <dt>Camera won't take a photo</dt><dd>It can't focus (too close, too dark, plain surface), the card is full or locked, or the flash is charging. Switch to MF to test.</dd>
+      <dt>Sharp on the camera screen, soft on the computer</dt><dd>The screen is small and forgiving. Zoom in on playback to check focus before you leave.</dd>
+      <dt>Lines or bands across photos indoors</dt><dd>Flickering lights with the electronic shutter. Use the mechanical shutter, or a shutter speed like 1/50 or 1/60.</dd>
+      <dt>Viewfinder is blurry but photos are sharp</dt><dd>Adjust the dioptre wheel beside the viewfinder to suit your eyesight.</dd>
+      <dt>Film: blank roll</dt><dd>The film didn't catch the take-up spool (check the rewind knob turns), or the lens cap was left on a rangefinder.</dd>
+      <dt>Film: part of the frame is black</dt><dd>Shutter faster than the flash sync speed, or a shutter fault that needs a repair shop.</dd>
+      <dt>Film: orange or red streaks</dt><dd>A light leak, often worn foam seals around the back door. Cheap to replace.</dd>
+      <dt>Film: thin, dark scans</dt><dd>Underexposed. Check the meter battery and ISO setting. Colour negative prefers too much light over too little.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="glossary" data-title="Glossary" data-group="ref">
+  <div class="wrap">
+    <p class="group-label">Reference</p>
+    <h2>Glossary</h2>
+    <label class="field" for="glossSearch">Search terms</label>
+    <input type="search" id="glossSearch" placeholder="e.g. bokeh, stop, RAW" autocomplete="off">
+    <dl class="gloss" id="glossList"></dl>
+  </div>
+</section>
+
+<section id="gear" data-title="Buying gear" data-group="ref">
+  <div class="wrap">
+    <p class="group-label">Reference</p>
+    <h2>Buying gear</h2>
+    <h3 style="margin-top:12px">What kind of camera?</h3>
+    <dl class="kv">
+      <dt>Mirrorless</dt><dd>Where nearly all new models are now. The electronic viewfinder shows the actual exposure, which makes learning easier. Smaller bodies and excellent subject-detection autofocus.</dd>
+      <dt>DSLR</dt><dd>Uses a mirror and optical viewfinder. Great value second-hand, with long battery life and huge lens choice, though few new models are being made.</dd>
+      <dt>Premium compact</dt><dd>Pocketable with a bigger sensor than a phone. Ideal for travel.</dd>
+      <dt>Bridge / superzoom</dt><dd>One body with a huge built-in zoom. Good for wildlife on a budget.</dd>
+      <dt>Phone</dt><dd>Brilliant for everyday photos. A dedicated camera wins at fast action, natural background blur, long zoom and low light without heavy processing.</dd>
     </dl>
 
-    <button class="next" data-go="start">Back to the start</button>
+    <h3>What actually matters</h3>
+    <ul>
+      <li><strong>How it feels in your hand.</strong> The camera you enjoy carrying gets used.</li>
+      <li><strong>The lens system.</strong> You'll buy lenses for years; choose a mount with lenses you want at prices you can afford.</li>
+      <li><strong>Autofocus</strong> if you shoot kids, pets, sport or wildlife.</li>
+      <li><strong>Megapixels</strong> matter far less than you'd think. 20–26MP is plenty for almost everyone.</li>
+      <li><strong>A flip or tilting screen</strong> helps with low and high angles, vlogging and selfies.</li>
+      <li><strong>A viewfinder</strong> is much easier in bright sun than the rear screen.</li>
+    </ul>
+
+    <h3>Lenses, in the order most people need them</h3>
+    <ol>
+      <li><strong>The kit zoom</strong> (around 18–55mm or 16–50mm). Keep it; learn with it.</li>
+      <li><strong>A fast 50mm or 35mm prime</strong> (f/1.8). Cheap, sharp, bright, background blur.</li>
+      <li><strong>A telephoto zoom</strong> (around 55–250mm or 70–300mm) for sport, wildlife and kids at the park.</li>
+      <li><strong>Then specialise:</strong> ultra-wide for landscapes and interiors, macro for close-ups, or an f/2.8 zoom for events.</li>
+    </ol>
+    <p class="small">Third-party makers such as Sigma, Tamron and Viltrox make good-value lenses for most mounts. Double-check the mount before buying.</p>
+
+    <h3>Accessories worth having</h3>
+    <dl class="kv">
+      <dt>Spare battery</dt><dd>The single most useful extra. Cold weather and video drain them fast.</dd>
+      <dt>Good memory cards</dt><dd>From a reputable brand. UHS-I U3/V30 is enough for most photo and 4K video; faster cards help with long bursts.</dd>
+      <dt>Tripod</dt><dd>For night, landscapes, long exposures and self-portraits. Check the weight rating covers your camera and biggest lens.</dd>
+      <dt>Lens hood</dt><dd>Reduces flare and protects the front of the lens. Often included; use it.</dd>
+      <dt>Cleaning kit</dt><dd>Air blower, soft brush, microfibre cloth.</dd>
+      <dt>Comfortable strap and bag</dt><dd>So the camera comes with you instead of sitting at home.</dd>
+      <dt>Filters</dt><dd>A circular polariser (deeper skies, fewer reflections) and an ND filter for long exposures. Clear "UV" filters are optional protection; cheap ones can soften photos.</dd>
+      <dt>External flash</dt><dd>One you can tilt and bounce off the ceiling transforms indoor photos.</dd>
+      <dt>Remote release</dt><dd>Or use the camera maker's phone app as a remote.</dd>
+    </dl>
+
+    <h3>Buying second-hand</h3>
+    <ul><li>Ask for the <strong>shutter count</strong> on digital bodies and compare it to the rated life.</li><li>Check the sensor for scratches, and the lens for haze, fungus and scratches. Test autofocus at both ends of a zoom.</li><li>Try every button, the card door and the screen, and check the battery holds charge.</li><li>Buy from a seller with returns or a warranty where possible.</li></ul>
+
+    <h3>Starting with film</h3>
+    <p>An automatic 35mm point-and-shoot is the easiest start. A manual 35mm SLR with a working light meter teaches you the most. Budget for film and developing too: over time they cost more than the camera.</p>
+  </div>
+</section>
+
+<section id="care" data-title="Care and cleaning" data-group="ref">
+  <div class="wrap">
+    <p class="group-label">Reference</p>
+    <h2>Care and cleaning</h2>
+    <h3 style="margin-top:12px">Cleaning a lens</h3>
+    <ol><li>Blow off loose dust with an air blower first, so you don't grind grit into the glass.</li><li>Brush away what's left with a soft lens brush.</li><li>Wipe in gentle circles from the centre with a clean microfibre cloth, using a drop of lens cleaning fluid on the cloth (never directly on the lens).</li></ol>
+    <p class="small">Don't use your shirt, tissues or household glass cleaner. A little dust on the front glass rarely shows in photos.</p>
+
+    <h3>Sensor dust</h3>
+    <ul><li>Change lenses quickly, with the camera facing down, out of the wind.</li><li>Use the camera's built-in sensor cleaning function.</li><li>Use a hand blower (never canned compressed air) with the camera facing down.</li><li>Don't touch the sensor. Wet cleaning swabs exist, but if you're unsure, a camera shop can do it.</li></ul>
+
+    <h3>Weather and temperature</h3>
+    <ul><li>Going from cold air into a warm room, seal the camera in a bag first and let it warm up slowly to avoid condensation inside.</li><li>Cold drains batteries: keep spares in an inside pocket.</li><li>"Weather sealed" means resistant, not waterproof. A rain cover or even a shower cap is cheap insurance.</li><li>At the beach, keep sand and salt spray away, and wipe the camera down afterwards.</li><li>Don't leave cameras or film in a hot car.</li></ul>
+
+    <h3>Storage</h3>
+    <ul><li>Store cameras and lenses somewhere dry with airflow. In humid weather, use silica gel or a dry cabinet to prevent lens fungus.</li><li>Take the battery out if storing for months.</li><li>Unused film keeps longest in the fridge. Let it warm up for an hour before opening the packet.</li><li>Get exposed film developed promptly.</li></ul>
+
+    <h3>Batteries and cards</h3>
+    <ul><li>Use genuine or well-reviewed third-party batteries; poor ones can swell or fail.</li><li>Format cards in the camera after backing up, rather than deleting photos one by one.</li><li>Never pull a card or battery while the camera is writing.</li></ul>
   </div>
 </section>
 
 </main>
 
-<footer><div class="wrap">Settings names differ slightly between brands: Canon uses Av and Tv where Nikon, Sony and Fujifilm use A and S. Your camera's manual has the exact button for each.</div></footer>
+<footer><div class="wrap">Brands name things differently: Canon uses Av and Tv where Nikon, Sony and Fujifilm use A and S. Your camera's manual has the exact button for each. Progress and challenge ticks are saved in this browser only.</div></footer>
 
-<script>
-(function(){
-"use strict";
-var $ = function(s){return document.querySelector(s)};
-
-/* ---------- Theme ---------- */
-var root = document.documentElement;
-try{ var t = localStorage.getItem("theme"); if(t) root.setAttribute("data-theme", t);}catch(e){}
-$("#themeBtn").addEventListener("click", function(){
-  var cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  var nxt = cur === "dark" ? "light" : "dark";
-  root.setAttribute("data-theme", nxt);
-  try{ localStorage.setItem("theme", nxt);}catch(e){}
-});
-
-/* ---------- Navigation ---------- */
-var sections = Array.prototype.slice.call(document.querySelectorAll("main > section"));
-var tabs = $("#tabs");
-sections.forEach(function(s){
-  var li = document.createElement("li");
-  var b = document.createElement("button");
-  b.type = "button"; b.textContent = s.dataset.title; b.dataset.go = s.id;
-  li.appendChild(b); tabs.appendChild(li);
-});
-function show(id, scroll){
-  if(!document.getElementById(id)) id = "start";
-  sections.forEach(function(s){ s.hidden = s.id !== id; });
-  tabs.querySelectorAll("button").forEach(function(b){
-    if(b.dataset.go === id){ b.setAttribute("aria-current","page"); b.scrollIntoView({inline:"center",block:"nearest"}); }
-    else b.removeAttribute("aria-current");
-  });
-  if(location.hash.slice(1) !== id) history.replaceState(null, "", "#"+id);
-  if(scroll) window.scrollTo(0,0);
-}
-document.addEventListener("click", function(e){
-  var el = e.target.closest("[data-go]");
-  if(!el) return;
-  e.preventDefault(); show(el.dataset.go, true);
-});
-window.addEventListener("hashchange", function(){ show(location.hash.slice(1), true); });
-show(location.hash.slice(1) || "start", false);
-
-/* ---------- Shared stops ---------- */
-var APS = [1.4,2,2.8,4,5.6,8,11,16,22];
-var SHS = [1/4000,1/2000,1/1000,1/500,1/250,1/125,1/60,1/30,1/15,1/8,1/4,1/2,1,2,4,8];
-var ISOS = [100,200,400,800,1600,3200,6400,12800];
-var COMPS = [-2,-1.7,-1.3,-1,-0.7,-0.3,0,0.3,0.7,1,1.3,1.7,2];
-function fmtSh(t){ return t >= 1 ? t + '"' : "1/" + Math.round(1/t); }
-function fmtComp(c){ return c === 0 ? "0" : (c > 0 ? "+" : "−") + Math.abs(c).toFixed(1); }
-var log2 = Math.log2 || function(x){return Math.log(x)/Math.LN2};
-
-/* ---------- Iris ---------- */
-var irisR = $("#irisRange");
-function drawIris(){
-  var n = APS[irisR.value];
-  $("#irisHole").setAttribute("r", (44 * 1.4 / n).toFixed(2));
-  $("#irisLabel").textContent = "f/" + n;
-  $("#irisNote").textContent = n <= 2.8 ? "Wide open: lots of light, blurry background" : n >= 11 ? "Narrow: little light, everything sharp" : "In between: a bit of both";
-}
-irisR.addEventListener("input", drawIris); drawIris();
-
-/* ---------- Playground ---------- */
-var LIGHTS = {
-  sun:{label:"Sunny", ev:15, sky:["#6FAEDD","#D2E8F6"], sun:"#FFF3C4", win:"#5D7A8C"},
-  cloud:{label:"Cloudy", ev:12, sky:["#9AA6AE","#D9DEE1"], sun:"#E4E7E8", win:"#5D6B74"},
-  dusk:{label:"Sunset", ev:9, sky:["#F08A4B","#F9D29A"], sun:"#FFE2A0", win:"#F2C46B"},
-  indoor:{label:"Indoors", ev:7, sky:["#C9B79A","#E8DCC6"], sun:"#F8E9C8", win:"#F2C46B"},
-  night:{label:"Night", ev:4, sky:["#1E2B4A","#3D4D72"], sun:"#F1F0E6", win:"#FFD36B"}
-};
-var MODES = {
-  Auto:{user:{}, desc:"Camera picks everything"},
-  P:{user:{iso:1, comp:1}},
-  A:{user:{ap:1, iso:1, comp:1}},
-  S:{user:{sh:1, iso:1, comp:1}},
-  M:{user:{ap:1, sh:1, iso:1}}
-};
-var st = {mode:"A", ap:4, sh:5, iso:1, comp:6, light:"sun", tripod:false};
-
-var modeSeg = $("#modeSeg");
-Object.keys(MODES).forEach(function(m){
-  var b = document.createElement("button"); b.type="button"; b.textContent = m; b.dataset.m = m;
-  b.addEventListener("click", function(){ st.mode = m; update(); });
-  modeSeg.appendChild(b);
-});
-var lightSeg = $("#lightSeg");
-Object.keys(LIGHTS).forEach(function(k){
-  var b = document.createElement("button"); b.type="button"; b.textContent = LIGHTS[k].label; b.dataset.l = k;
-  b.addEventListener("click", function(){ st.light = k; update(); });
-  lightSeg.appendChild(b);
-});
-$("#tripod").addEventListener("change", function(e){ st.tripod = e.target.checked; update(); });
-
-var CTL = [
-  {key:"ap", name:"Aperture", list:APS, fmt:function(v){return "f/"+v}},
-  {key:"sh", name:"Shutter speed", list:SHS, fmt:fmtSh},
-  {key:"iso", name:"ISO", list:ISOS, fmt:function(v){return v}},
-  {key:"comp", name:"Exposure comp.", list:COMPS, fmt:fmtComp}
-];
-var ctlBox = $("#controls");
-CTL.forEach(function(c){
-  var row = document.createElement("div"); row.className = "ctl";
-  row.innerHTML = '<div class="name">'+c.name+'<span class="who"></span></div>'+
-    '<div class="stepper"><button type="button" aria-label="Decrease '+c.name+'">−</button><output></output><button type="button" aria-label="Increase '+c.name+'">+</button></div>';
-  var btns = row.querySelectorAll("button");
-  btns[0].addEventListener("click", function(){ if(st[c.key] > 0){ st[c.key]--; update(); }});
-  btns[1].addEventListener("click", function(){ if(st[c.key] < c.list.length-1){ st[c.key]++; update(); }});
-  c.row = row; c.who = row.querySelector(".who"); c.out = row.querySelector("output"); c.dec = btns[0]; c.inc = btns[1];
-  ctlBox.appendChild(row);
-});
-
-function offsetFor(ai, si, ii){
-  var N = APS[ai], t = SHS[si], iso = ISOS[ii];
-  return LIGHTS[st.light].ev + log2(iso/100) - log2(N*N/t);
-}
-function solve(){
-  var u = MODES[st.mode].user;
-  if(st.mode === "M") return;
-  var target = u.comp ? COMPS[st.comp] : 0;
-  var aRange = u.ap ? [st.ap] : APS.map(function(_,i){return i});
-  var sRange = u.sh ? [st.sh] : SHS.map(function(_,i){return i});
-  var iRange = u.iso ? [st.iso] : ISOS.map(function(_,i){return i});
-  var best = null, bestScore = Infinity;
-  aRange.forEach(function(a){ sRange.forEach(function(s){ iRange.forEach(function(i){
-    var off = offsetFor(a,s,i), t = SHS[s], sc = Math.abs(off - target) * 10;
-    if(!u.sh){
-      if(!st.tripod && t > 1/60) sc += log2(t*60) * 4;
-      sc += Math.abs(log2(t*250)) * 0.15;
-    }
-    if(!u.ap) sc += Math.abs(log2(APS[a]/5.6)) * 0.5;
-    if(!u.iso) sc += log2(ISOS[i]/100) * 1.5;
-    if(sc < bestScore){ bestScore = sc; best = [a,s,i]; }
-  });});});
-  st.ap = best[0]; st.sh = best[1]; st.iso = best[2];
-}
-
-function update(){
-  solve();
-  var u = MODES[st.mode].user, L = LIGHTS[st.light];
-  var N = APS[st.ap], t = SHS[st.sh], iso = ISOS[st.iso];
-  var off = offsetFor(st.ap, st.sh, st.iso);
-  var target = u.comp ? COMPS[st.comp] : 0;
-  var limited = st.mode !== "M" && Math.abs(off - target) > 0.5;
-
-  modeSeg.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.m === st.mode); });
-  lightSeg.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.l === st.light); });
-
-  CTL.forEach(function(c){
-    var mine = !!u[c.key];
-    var hidden = c.key === "comp" && (st.mode === "M" || st.mode === "Auto");
-    c.row.style.display = hidden ? "none" : "";
-    c.who.textContent = mine ? "you set" : "camera sets";
-    c.out.textContent = c.fmt(c.list[st[c.key]]);
-    c.dec.disabled = !mine || st[c.key] === 0;
-    c.inc.disabled = !mine || st[c.key] === c.list.length-1;
-  });
-
-  // LCD
-  $("#lcdMode").textContent = st.mode;
-  $("#lcdSh").innerHTML = "<small>shutter</small>" + fmtSh(t);
-  $("#lcdAp").innerHTML = "<small>f</small>" + N;
-  $("#lcdIso").innerHTML = "<small>ISO</small>" + iso;
-  ["Sh","Ap","Iso"].forEach(function(k){
-    var key = {Sh:"sh",Ap:"ap",Iso:"iso"}[k];
-    var el = $("#lcd"+k);
-    el.classList.toggle("cam", !u[key]);
-    el.classList.toggle("limit", limited && !u[key]);
-  });
-  $("#lcd").classList.toggle("blink", limited);
-  var m = Math.max(-3, Math.min(3, off));
-  $("#needle").style.left = ((m + 3) / 6 * 100) + "%";
-
-  // Scene
-  $("#skyTop").setAttribute("stop-color", L.sky[0]);
-  $("#skyBot").setAttribute("stop-color", L.sky[1]);
-  $("#simSun").setAttribute("fill", L.sun);
-  $("#win1").setAttribute("fill", L.win); $("#win2").setAttribute("fill", L.win);
-  var bright = Math.max(0.04, Math.min(8, Math.pow(2, off * 0.75)));
-  $("#simFilter").style.filter = "brightness(" + bright.toFixed(3) + ")" + (off > 1 ? " contrast(" + Math.max(0.6, 1 - (off-1)*0.12).toFixed(2) + ")" : "");
-  $("#bgBlur").setAttribute("stdDeviation", (9 / N).toFixed(2));
-  $("#moveBlur").setAttribute("stdDeviation", Math.min(30, t * 700).toFixed(2) + " 0");
-  var shake = (!st.tripod && t >= 1/30) ? Math.min(5, 1 + log2(t*30) * 1.1) : 0;
-  $("#shakeBlur").setAttribute("stdDeviation", shake.toFixed(2));
-  $("#noise").setAttribute("opacity", Math.min(0.55, log2(iso/100) * 0.075).toFixed(3));
-
-  // Feedback
-  var fb = [];
-  if(limited) fb.push(["warn", "The camera can't reach a good exposure with what you've locked in. Real cameras blink the numbers to warn you. Try changing ISO" + (u.ap ? " or the aperture." : u.sh ? " or the shutter speed." : ".")]);
-  if(off > 1.5) fb.push(["warn","Very overexposed: bright areas have turned to pure white and can't be recovered."]);
-  else if(off > 0.4) fb.push(["warn","A bit too bright."]);
-  else if(off < -1.5) fb.push(["warn","Very underexposed: the photo is too dark and will be noisy if brightened later."]);
-  else if(off < -0.4) fb.push(["warn","A bit too dark."]);
-  else fb.push(["good","Exposure looks right."]);
-  if(t <= 1/500) fb.push(["good","Fast shutter: the moving ball is frozen."]);
-  else if(t >= 1/60) fb.push(["warn","Slow shutter for a moving subject: the ball is smeared. For action try 1/500 or faster."]);
-  if(shake > 0) fb.push(["warn","At " + fmtSh(t) + " your hands will shake the camera. Use a tripod or a faster shutter."]);
-  if(N <= 2.8) fb.push(["good","Wide aperture: the background is soft and the flower stands out."]);
-  else if(N >= 8) fb.push(["good","Narrow aperture: the background is sharp too, good for landscapes."]);
-  if(iso >= 3200) fb.push(["warn","High ISO: lots of visible noise."]);
-  else if(iso >= 1600) fb.push(["warn","ISO is getting high: some grain is showing."]);
-  if(st.mode === "P") fb.push(["", "In P mode, most cameras let you turn a dial to shift between equal combinations, like a faster shutter with a wider aperture."]);
-  $("#feedback").innerHTML = fb.map(function(f){ return '<li class="'+f[0]+'">'+f[1]+'</li>'; }).join("");
-}
-update();
-
-/* ---------- Mode dial ---------- */
-var DIAL = [
-  {id:"Auto", label:"AUTO", green:true, title:"Auto (the green mode)",
-   you:"Nothing, except where you point the camera and when you press.",
-   cam:"Aperture, shutter speed, ISO, flash, focus and colour.",
-   use:"Handing your camera to someone else, or when you can't think about settings.",
-   names:"A green camera or green square, or 'Auto' / 'A+' (Canon), 'Intelligent Auto' (Sony)."},
-  {id:"P", label:"P", title:"P: Program",
-   you:"ISO, exposure compensation, white balance, flash on or off, focus mode. You can also turn a dial to 'shift' the combination the camera picked.",
-   cam:"Aperture and shutter speed.",
-   use:"Moving off Auto for the first time. Quick snapshots where you still want control over the extras.",
-   names:"P on every brand."},
-  {id:"A", label:"A / Av", title:"A or Av: Aperture priority",
-   you:"Aperture, plus ISO and exposure compensation.",
-   cam:"Shutter speed, to make the brightness right.",
-   use:"Most everyday shooting. Blurry backgrounds for portraits (f/1.8–f/4) or sharp landscapes (f/8–f/11).",
-   names:"A on Nikon, Sony, Fujifilm, Olympus. Av ('aperture value') on Canon and Pentax."},
-  {id:"S", label:"S / Tv", title:"S or Tv: Shutter priority",
-   you:"Shutter speed, plus ISO and exposure compensation.",
-   cam:"Aperture, to make the brightness right.",
-   use:"Anything moving: 1/500+ to freeze sport, kids and pets; slow speeds like 1/15 to blur water or show motion.",
-   names:"S on Nikon, Sony, Fujifilm. Tv ('time value') on Canon and Pentax."},
-  {id:"M", label:"M", title:"M: Manual",
-   you:"Aperture, shutter speed and ISO. Many cameras also allow Auto ISO in M.",
-   cam:"Nothing. It shows a light meter so you can judge.",
-   use:"Steady light that isn't changing: sunsets, night scenes on a tripod, studio flash, fireworks, panoramas.",
-   names:"M on every brand. Most older film cameras are effectively always in M."},
-  {id:"B", label:"B", title:"B: Bulb",
-   you:"Everything. The shutter stays open for as long as you hold the button.",
-   cam:"Nothing.",
-   use:"Exposures longer than 30 seconds: star trails, lightning, fireworks. Use a tripod and a remote release.",
-   names:"B on most cameras, sometimes found at the end of the shutter speeds in M."},
-  {id:"Video", label:"VIDEO", title:"Video",
-   you:"Depends on the camera; many have their own P/A/S/M for video.",
-   cam:"Usually exposure and focus, unless set to manual.",
-   use:"Filming. A good starting rule: shutter at about double the frame rate, e.g. 1/50 for 25fps.",
-   names:"A film-camera icon, or a red record button."},
-  {id:"SCN", label:"SCN", title:"SCN: Scene modes",
-   you:"Choose the type of scene; the camera does the rest.",
-   cam:"Everything, tuned for that scene.",
-   use:"Portrait (wide aperture), Landscape (narrow aperture), Sport (fast shutter), Macro (close-ups), Night. They're really just Auto with a hint.",
-   names:"SCN, or small icons of a face, mountain, runner, flower and moon."}
-];
-var dial = $("#dial"), dialRot = 0, step = 360 / DIAL.length, R = 92;
-DIAL.forEach(function(d, i){
-  var b = document.createElement("button"); b.type = "button"; b.textContent = d.label;
-  b.setAttribute("aria-label", d.title);
-  if(d.green) b.classList.add("green");
-  d.angle = i * step; d.btn = b;
-  b.addEventListener("click", function(){ pickMode(i); });
-  dial.appendChild(b);
-});
-function placeDial(){
-  dial.style.transform = "rotate(" + dialRot + "deg)";
-  DIAL.forEach(function(d){
-    d.btn.style.transform = "translate(-50%,-50%) rotate(" + d.angle + "deg) translateY(-" + R + "px) rotate(" + (-d.angle - dialRot) + "deg)";
-  });
-}
-function pickMode(i){
-  var d = DIAL[i];
-  // rotate the shortest way so this mode sits under the pointer
-  var target = -d.angle, diff = ((target - dialRot) % 360 + 540) % 360 - 180;
-  dialRot += diff;
-  placeDial();
-  DIAL.forEach(function(x){ x.btn.setAttribute("aria-pressed", x === d); });
-  $("#mode-detail").innerHTML =
-    "<h3>"+d.title+"</h3><dl class='kv'><dt>You choose</dt><dd>"+d.you+"</dd><dt>The camera chooses</dt><dd>"+d.cam+
-    "</dd><dt>Use it for</dt><dd>"+d.use+"</dd><dt>What it's called on your camera</dt><dd>"+d.names+"</dd></dl>";
-}
-pickMode(2);
-
-/* ---------- Focal length ---------- */
-var FLS = [14,18,24,28,35,50,70,85,105,135,200,300,400];
-var flR = $("#flRange"), crop = $("#crop");
-function drawFl(){
-  var f = FLS[flR.value], eff = crop.checked ? f * 1.5 : f;
-  var w = 900 * 14 / eff, h = w * 2/3;
-  $("#flSvg").setAttribute("viewBox", (450 - w/2).toFixed(2) + " " + (300 - h/2).toFixed(2) + " " + w.toFixed(2) + " " + h.toFixed(2));
-  $("#flMm").textContent = f + "mm";
-  var ang = 2 * Math.atan(18 / eff) * 180 / Math.PI;
-  $("#flAngle").textContent = "Sees about " + Math.round(ang) + "° from side to side" + (crop.checked ? ", the same as a " + Math.round(eff) + "mm lens on full frame or film." : ".");
-  var kind, use;
-  if(eff < 24){ kind = "Ultra-wide"; use = "Huge landscapes, tight rooms, dramatic architecture. Things close to the lens look much bigger than things far away."; }
-  else if(eff < 40){ kind = "Wide"; use = "Travel, street, groups, landscapes, and phone-camera-style everyday shots. Most phones' main camera is around 24–28mm."; }
-  else if(eff < 65){ kind = "Normal"; use = "Roughly what your eye focuses on. Great all-rounder for people and places."; }
-  else if(eff < 140){ kind = "Short telephoto"; use = "The classic portrait range. Flattering faces and easy blurry backgrounds."; }
-  else { kind = "Telephoto"; use = "Wildlife, sport, the moon, and details you can't walk up to. Needs fast shutter speeds to stay sharp by hand: at least 1/" + Math.round(eff) + "."; }
-  $("#flKind").textContent = kind;
-  $("#flUse").textContent = use;
-}
-flR.addEventListener("input", drawFl); crop.addEventListener("change", drawFl); drawFl();
-
-/* ---------- Sunny 16 ---------- */
-function drawS16(){
-  var iso = +$("#s16Iso").value, n = +$("#s16Light").value;
-  var ai = APS.indexOf(n);
-  var si = 0, bestD = Infinity;
-  SHS.forEach(function(t, i){ var d = Math.abs(log2(t * iso)); if(d < bestD){ bestD = d; si = i; } });
-  var combos = [];
-  for(var k = -2; k <= 2; k++){
-    var a = ai - k, s = si - k;
-    if(a >= 0 && a < APS.length && s >= 0 && s < SHS.length && SHS[s] <= 1/30) combos.push("f/" + APS[a] + " at " + fmtSh(SHS[s]));
-  }
-  $("#s16Out").innerHTML =
-    '<div class="lcd"><div class="lcd-row"><span class="val"><small>f</small>' + n + '</span><span class="val"><small>shutter</small>' + fmtSh(SHS[si]) + '</span><span class="val"><small>ISO</small>' + iso + '</span></div></div>' +
-    '<p class="small" style="margin:0">These all give the same exposure, pick whichever suits the shot: ' + combos.join(", ") + '.</p>';
-}
-$("#s16Iso").addEventListener("change", drawS16); $("#s16Light").addEventListener("change", drawS16); drawS16();
-
-})();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
