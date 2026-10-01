@@ -10,6 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1D2226">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Get Off Auto">
 </head>
 <body>
 
@@ -101,6 +107,13 @@
       <button data-go="playground"><b>Play with a camera</b><span>Change settings and watch a photo react, no camera needed.</span></button>
       <button data-go="genres"><b>Shoot something specific</b><span>Settings and tips for portraits, sport, night skies and more.</span></button>
       <button data-go="cheat"><b>Just tell me what to set</b><span>One-page cheat sheet for common situations.</span></button>
+      <button data-go="finder"><b>Help me choose a camera</b><span>Six quick questions, then a recommendation that suits you.</span></button>
+      <button data-go="suntimes"><b>When's golden hour?</b><span>Today's best light, wherever you are.</span></button>
+    </div>
+    <div class="panel" id="installBox" hidden>
+      <strong>Use it offline</strong>
+      <p class="small" id="installText" style="margin:4px 0 10px">Install this guide on your phone and it works without signal: handy at the beach, in the bush or at a dark-sky spot.</p>
+      <button type="button" class="btn" id="installBtn" hidden>Install the app</button>
     </div>
     <div id="homeGroups"></div>
   </div>
@@ -248,6 +261,52 @@
     <p>Once that feels natural, use <strong>S</strong> for anything that moves, and <strong>M</strong> when the light isn't changing, like a sunset or a night scene on a tripod.</p>
     <h3>Custom modes (C1, C2, U1…)</h3>
     <p>Some cameras have custom positions that save a whole set of settings. Set up your favourite sport settings once, save them to C1, and switch to them in one turn.</p>
+  </div>
+</section>
+
+<section id="brands" data-title="Where it is on your camera" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Where it is on your camera</h2>
+    <p>Every brand does the same things but calls them something different. Pick your brand to highlight its column, or compare them all.</p>
+    <div class="seg" id="brandSeg" role="group" aria-label="Camera brand">
+      <button type="button" data-b="all" aria-pressed="true">All</button>
+      <button type="button" data-b="1" aria-pressed="false">Canon</button>
+      <button type="button" data-b="2" aria-pressed="false">Nikon</button>
+      <button type="button" data-b="3" aria-pressed="false">Sony</button>
+      <button type="button" data-b="4" aria-pressed="false">Fujifilm</button>
+    </div>
+    <div class="table-scroll"><table id="brandTable">
+      <thead><tr><th>Setting</th><th>Canon</th><th>Nikon</th><th>Sony</th><th>Fujifilm</th></tr></thead>
+      <tbody>
+        <tr><td>Aperture priority</td><td>Av</td><td>A</td><td>A</td><td>A on the mode dial, or set the lens's aperture ring and put the shutter dial on A</td></tr>
+        <tr><td>Shutter priority</td><td>Tv</td><td>S</td><td>S</td><td>S on the mode dial, or set the shutter dial and put the aperture ring on A</td></tr>
+        <tr><td>Exposure compensation</td><td>+/− button, or a dial in Av and Tv</td><td>Hold +/− and turn the main dial</td><td>A dedicated dial on many models, or the control wheel</td><td>The top dial marked −3 to +3 (or C to use a command dial)</td></tr>
+        <tr><td>Focus once and lock</td><td>One Shot</td><td>AF-S</td><td>AF-S (Single-shot AF)</td><td>S on the focus switch, or AF-S</td></tr>
+        <tr><td>Keep focusing on moving subjects</td><td>Servo (AI Servo on DSLRs)</td><td>AF-C</td><td>AF-C (Continuous AF)</td><td>C on the focus switch, or AF-C</td></tr>
+        <tr><td>Whole-frame metering</td><td>Evaluative</td><td>Matrix</td><td>Multi</td><td>Multi</td></tr>
+        <tr><td>Quick settings menu</td><td>Q button</td><td>i button</td><td>Fn button</td><td>Q button</td></tr>
+        <tr><td>JPEG colour looks</td><td>Picture Style</td><td>Picture Control</td><td>Creative Look (Creative Style on older models)</td><td>Film Simulation</td></tr>
+        <tr><td>Lens stabilisation label</td><td>IS</td><td>VR</td><td>OSS</td><td>OIS</td></tr>
+        <tr><td>Silent shutter</td><td>Shutter mode: Electronic</td><td>Silent photography / electronic shutter</td><td>Silent Shooting or Shutter Type</td><td>Shutter Type: ES</td></tr>
+        <tr><td>Mirrorless lens mount</td><td>RF (RF-S for APS-C lenses)</td><td>Z (DX lenses for APS-C)</td><td>E (FE lenses cover full frame)</td><td>X (GFX for medium format)</td></tr>
+        <tr><td>DSLR lens mount</td><td>EF (EF-S for APS-C)</td><td>F</td><td>A (older SLT cameras)</td><td>—</td></tr>
+        <tr><td>APS-C crop factor</td><td>1.6×</td><td>1.5× (called DX)</td><td>1.5×</td><td>1.5×</td></tr>
+        <tr><td>RAW file type</td><td>.CR3 (.CR2 on older models)</td><td>.NEF</td><td>.ARW</td><td>.RAF</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">Older and entry-level models sometimes differ. OM System (Olympus) and Panasonic use A and S on the dial, and their Micro Four Thirds lenses fit both brands.</p>
+
+    <h3>Adapting lenses</h3>
+    <p>Mirrorless cameras can usually take older lenses with an adapter. Canon's EF-to-RF and Nikon's F-to-Z adapters keep autofocus with most lenses. Cheap adapters for old manual film lenses work too, as long as you focus by hand and set the aperture on the lens. It's a fun, cheap way to use vintage glass.</p>
+
+    <h3>Learn your own camera faster</h3>
+    <ul>
+      <li>Download the manual as a PDF to your phone and search it for the word you need.</li>
+      <li>Set up the quick menu (Q, i or Fn) with the six settings you change most.</li>
+      <li>Assign the custom buttons to things you use often, like ISO or the focus mode.</li>
+      <li>Most cameras have a "My Menu" page: put your favourite settings there.</li>
+    </ul>
   </div>
 </section>
 
@@ -678,6 +737,125 @@
   </div>
 </section>
 
+<section id="video" data-title="Video basics" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Video basics</h2>
+    <p>Video uses the same aperture and ISO you already know. The big difference is that shutter speed is mostly decided for you by the frame rate.</p>
+
+    <h3>Frame rate</h3>
+    <dl class="kv">
+      <dt>24 or 25 fps</dt><dd>The classic film look. Use 25 in Australia and other countries with 50Hz power so indoor lights don't flicker.</dd>
+      <dt>30 fps</dt><dd>Common in the US, Canada and Japan (60Hz power).</dd>
+      <dt>50 or 60 fps</dt><dd>Smoother motion for sport and action, and can be slowed to half speed.</dd>
+      <dt>100 or 120 fps</dt><dd>For slow motion. Slowed down to 25 fps, it plays four or five times slower.</dd>
+    </dl>
+
+    <h3>The 180° shutter rule</h3>
+    <p>Set the shutter to about <strong>double the frame rate</strong>: 1/50 for 25 fps, 1/100 for 50 fps. Motion then has a natural, gentle blur. Much faster shutters look jittery, like a stuttery action scene.</p>
+    <p>That's a problem in bright sun: with the shutter fixed at 1/50, the only way to avoid overexposure is a narrow aperture, which loses background blur. The answer is an <strong>ND filter</strong>. A variable ND, which you twist to adjust, is the favourite for video.</p>
+    <div class="panel">
+      <div class="fields">
+        <div><label class="field" for="vidFps">Frame rate</label>
+          <select id="vidFps"><option value="24">24 fps</option><option value="25" selected>25 fps</option><option value="30">30 fps</option><option value="50">50 fps</option><option value="60">60 fps</option><option value="100">100 fps</option><option value="120">120 fps</option></select></div>
+        <div><label class="field" for="vidAp">Aperture you want</label>
+          <select id="vidAp"><option>1.8</option><option selected>2.8</option><option>4</option><option>5.6</option><option>8</option></select></div>
+        <div class="full"><label class="field" for="vidLight">Light</label>
+          <select id="vidLight"><option value="15" selected>Bright sun</option><option value="13">Hazy sun</option><option value="12">Cloudy</option><option value="11">Open shade</option><option value="9">Sunset</option><option value="7">Bright indoors</option></select></div>
+      </div>
+      <div class="lcd" style="margin-top:16px">
+        <div class="lcd-row">
+          <span><span class="lab">shutter</span><span class="big" id="vidSh"></span></span>
+          <span><span class="lab">ND needed at ISO 100</span><span class="big" id="vidNd"></span></span>
+        </div>
+      </div>
+      <p class="small" id="vidNote" style="margin:10px 0 0"></p>
+    </div>
+
+    <h3>Resolution and settings</h3>
+    <ul>
+      <li><strong>4K</strong> is sharper and lets you crop later. <strong>1080p</strong> files are smaller and easier to edit on older computers.</li>
+      <li>Use AF-C with face or eye tracking, or manual focus for steady scenes.</li>
+      <li>Turn on stabilisation (or "Active/Enhanced" digital stabilisation) for handheld shots.</li>
+      <li><strong>Log profiles</strong> (C-Log, N-Log, S-Log, F-Log) keep more detail for colour grading, but look flat and grey until edited. Skip them until you're comfortable editing.</li>
+      <li>Use a fast card: V30 for most 4K, V60 or V90 for high-bitrate modes.</li>
+      <li>Long 4K clips can heat cameras up. Check for recording limits and overheating settings.</li>
+    </ul>
+
+    <h3>Sound matters more than picture</h3>
+    <p>People forgive soft footage, but not bad audio. A small on-camera microphone is the biggest upgrade, and a clip-on lavalier mic or wireless kit is best for talking to camera.</p>
+    <ul>
+      <li>Use a fluffy "dead cat" wind cover outdoors.</li>
+      <li>Get the mic close to the speaker's mouth.</li>
+      <li>Set audio levels so speech peaks around −12dB, never touching 0.</li>
+      <li>Listen with headphones if your camera has a headphone socket.</li>
+    </ul>
+
+    <h3>Shooting tips</h3>
+    <ul>
+      <li>Hold each shot for at least 10 seconds; you'll need the extra when editing.</li>
+      <li>Move slowly: smooth pans and walking shots, or use a tripod or gimbal.</li>
+      <li>Shoot "B-roll": hands, details, wide shots and reactions to cut away to.</li>
+      <li>Wide, medium and close-up of the same moment makes editing far easier.</li>
+      <li>Face your speaker towards a window for soft, flattering light.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="phone" data-title="Getting more from a phone camera" data-group="learn">
+  <div class="wrap">
+    <p class="group-label">Learn</p>
+    <h2>Getting more from a phone camera</h2>
+    <p>Everything in this course applies to phones too. The differences: phones have a fixed aperture, so they control light with only shutter speed and ISO, and they lean heavily on processing to make up for their small sensors.</p>
+
+    <h3>Know your lenses</h3>
+    <p>The zoom buttons (0.5×, 1×, 3× and so on) switch between separate cameras.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Button</th><th>What it is</th><th>Use it for</th></tr></thead>
+      <tbody>
+        <tr><td>0.5× (ultra-wide)</td><td>Roughly a 13–16mm equivalent</td><td>Big landscapes, small rooms, dramatic close angles. Avoid for faces near the edges.</td></tr>
+        <tr><td>1× (main)</td><td>Roughly 24–26mm; the biggest, best sensor</td><td>Almost everything, and especially low light.</td></tr>
+        <tr><td>2×</td><td>Usually a crop from the main camera</td><td>Portraits and everyday shots with a more natural look.</td></tr>
+        <tr><td>3×–5× (telephoto)</td><td>A separate telephoto lens, roughly 70–120mm</td><td>Portraits, details, distant subjects in good light.</td></tr>
+        <tr><td>Beyond that</td><td>Digital zoom: cropping and enlarging</td><td>Quality drops fast. Walk closer instead.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">Which lenses and numbers you have depends on your phone. In dim light, many phones quietly switch from telephoto to a crop of the main camera.</p>
+
+    <h3>Ten habits that make a big difference</h3>
+    <ol>
+      <li><strong>Wipe the lens.</strong> Pocket grease is the number one cause of hazy, glowing phone photos.</li>
+      <li><strong>Tap to focus</strong> on your subject, then <strong>slide the brightness</strong> up or down. That's exposure compensation.</li>
+      <li><strong>Long-press to lock</strong> focus and exposure (AE/AF lock) so they don't change as you recompose.</li>
+      <li><strong>Turn on the grid and level</strong> in camera settings for straight horizons and thirds.</li>
+      <li><strong>Hold still for night mode.</strong> It takes several seconds of frames; brace on something.</li>
+      <li><strong>Use burst or Live Photos</strong> for moving kids and pets, then pick the best frame.</li>
+      <li><strong>Use the volume button</strong> as a shutter: it's steadier than tapping the screen.</li>
+      <li><strong>Don't over-zoom.</strong> Stick to the real lens buttons.</li>
+      <li><strong>Turn off the flash</strong> unless you really need it; night mode almost always looks better.</li>
+      <li><strong>Find good light.</strong> A phone in great light beats an expensive camera in bad light.</li>
+    </ol>
+
+    <h3>Portrait mode</h3>
+    <p>Portrait mode fakes background blur with software. It's great for people, but watch for mistakes around hair, glasses, ears and fingers. Most phones let you adjust or remove the blur afterwards. Stand at the distance the camera asks for, and keep plenty of space behind your subject.</p>
+
+    <h3>Pro mode and RAW</h3>
+    <p>Many phones offer a Pro or Manual mode (or apps that add one) where you set ISO, shutter speed, white balance and focus yourself, plus RAW capture for editing. It's a great way to practise this course with the camera you always carry. Remember the aperture usually can't change, so ISO and shutter do all the work.</p>
+
+    <h3>Where a dedicated camera still wins</h3>
+    <ul>
+      <li>Fast action: kids' sport, pets running, birds in flight.</li>
+      <li>Real optical zoom past about 5×.</li>
+      <li>Natural background blur without software errors.</li>
+      <li>Low light without heavy processing, and large prints.</li>
+      <li>Swappable lenses, proper grip and controls.</li>
+    </ul>
+
+    <h3>Handy phone accessories</h3>
+    <p>A small tripod with a phone clamp, a Bluetooth remote, a gimbal for smooth video, a clip-on mic, and a power bank. Clip-on lenses are hit and miss: try before you buy.</p>
+  </div>
+</section>
+
 <section id="genres" data-title="Shooting guides" data-group="learn">
   <div class="wrap">
     <p class="group-label">Learn</p>
@@ -831,12 +1009,68 @@
   </div>
 </section>
 
+<section id="guess" data-title="Guess the settings" data-group="practice">
+  <div class="wrap">
+    <p class="group-label">Practice</p>
+    <h2>Guess the settings</h2>
+    <p>Look at the photo and work out which settings took it. The camera was on a tripod and the brightness is correct every time, so the clues are in the blur, the background and the grain.</p>
+    <div class="two-col">
+      <div>
+        <div class="viewer"><div id="guessWrap"></div></div>
+        <p class="small" id="guessLight"></p>
+      </div>
+      <div class="panel" id="guessBox" style="margin-top:0"></div>
+    </div>
+    <div class="tip"><p><strong>The clues:</strong> a blurry background means a wide aperture. A smeared ball means a slow shutter. Speckly grain means high ISO. Then check whether the light makes sense: night needs a lot more help than sunshine.</p></div>
+  </div>
+</section>
+
+<section id="spot" data-title="Spot the mistake" data-group="practice">
+  <div class="wrap">
+    <p class="group-label">Practice</p>
+    <h2>Spot the mistake</h2>
+    <p>Each photo has one thing wrong with it. Tap where the problem is.</p>
+    <div class="panel">
+      <div class="small" id="spotHead"></div>
+      <div class="frame32 spot" id="spotHost" style="margin-top:8px"></div>
+      <div id="spotFb" aria-live="polite"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <button type="button" class="btn ghost" id="spotShow">Show me</button>
+        <button type="button" class="btn" id="spotNext" hidden>Next photo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="quiz" data-title="Quiz" data-group="practice">
   <div class="wrap">
     <p class="group-label">Practice</p>
     <h2>Quiz</h2>
     <p>Twelve random questions from the whole course. See how much has stuck.</p>
     <div class="panel" id="quizBox"></div>
+  </div>
+</section>
+
+<section id="flashcards" data-title="Flashcards" data-group="practice">
+  <div class="wrap">
+    <p class="group-label">Practice</p>
+    <h2>Flashcards</h2>
+    <p>Every term from the glossary. Tap the card to flip it, then sort it. Cards you're still learning come back around; cards you know are saved on this device.</p>
+    <div class="seg soft" id="fcSide" role="group" aria-label="Which side to show first">
+      <button type="button" data-s="term" aria-pressed="true">Show the term first</button>
+      <button type="button" data-s="def" aria-pressed="false">Show the meaning first</button>
+    </div>
+    <div class="progress" style="margin-top:12px"><div id="fcBar"></div></div>
+    <p class="small" id="fcProg" style="margin-top:6px"></p>
+    <div class="flashcard" id="fcCard" tabindex="0" role="button" aria-label="Flip card">
+      <div class="fc-face" id="fcFace"></div>
+      <div class="small" id="fcHint">Tap to flip</div>
+    </div>
+    <div class="flash-actions">
+      <button type="button" class="btn ghost" id="fcAgain">Still learning</button>
+      <button type="button" class="btn" id="fcKnow">Know it</button>
+    </div>
+    <button type="button" class="btn ghost" id="fcReset" style="margin-top:16px">Start over</button>
   </div>
 </section>
 
@@ -950,6 +1184,30 @@
   </div>
 </section>
 
+<section id="suntimes" data-title="Golden and blue hour times" data-group="tools">
+  <div class="wrap">
+    <p class="group-label">Tools</p>
+    <h2>Golden and blue hour times</h2>
+    <p>The best light happens around sunrise and sunset. Choose a place and date to see exactly when.</p>
+    <div class="panel">
+      <div class="fields">
+        <div class="full"><label class="field" for="sunPlace">Place</label>
+          <select id="sunPlace"></select></div>
+        <div><label class="field" for="sunLat">Latitude</label><input type="number" id="sunLat" step="0.0001" inputmode="decimal"></div>
+        <div><label class="field" for="sunLng">Longitude</label><input type="number" id="sunLng" step="0.0001" inputmode="decimal"></div>
+        <div class="full"><label class="field" for="sunDate">Date</label><input type="date" id="sunDate" style="font:inherit;padding:10px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%"></div>
+      </div>
+      <button type="button" class="btn ghost" id="sunGeo" style="margin-top:12px">Use my location</button>
+      <p class="small" id="sunGeoMsg" style="margin:6px 0 0"></p>
+      <div class="timeline" id="sunBar" aria-hidden="true"></div>
+      <div class="tl-scale" aria-hidden="true"><span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>12am</span></div>
+      <div class="tl-legend" aria-hidden="true"><span><i class="tl-night"></i>Night</span><span><i class="tl-blue"></i>Blue hour</span><span><i class="tl-gold"></i>Golden hour</span><span><i class="tl-day"></i>Daylight</span></div>
+      <div id="sunOut" aria-live="polite"></div>
+    </div>
+    <p class="small">Golden hour here is when the sun is between 6° above and 4° below the horizon; blue hour is 4° to 6° below. Hills, buildings and cloud change what you actually see, so arrive early.</p>
+  </div>
+</section>
+
 <section id="night" data-title="Night sky calculator" data-group="tools">
   <div class="wrap">
     <p class="group-label">Tools</p>
@@ -1055,6 +1313,16 @@
     <label class="field" for="glossSearch">Search terms</label>
     <input type="search" id="glossSearch" placeholder="e.g. bokeh, stop, RAW" autocomplete="off">
     <dl class="gloss" id="glossList"></dl>
+  </div>
+</section>
+
+<section id="finder" data-title="Camera finder" data-group="ref">
+  <div class="wrap">
+    <p class="group-label">Reference</p>
+    <h2>Camera finder</h2>
+    <p>Answer six quick questions for a recommendation on what type of camera, lenses and extras to look at. It doesn't name models, because those change every year. Take the result into a store and try a few in your hands.</p>
+    <div id="finderBox"></div>
+    <div id="finderOut" aria-live="polite"></div>
   </div>
 </section>
 
