@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: camera-guide
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
